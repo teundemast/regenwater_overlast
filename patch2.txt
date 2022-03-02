@@ -1,0 +1,123 @@
+P2 BTW-01 Wateroverlast Aquadrome J.J. van Deinselaan Enschede 054131 ----- J J Van Deinselaan, Enschede ----- J J Van Deinselaan 2, Enschede
+P2 BTW-01 Wateroverlast Aquadrome J.J. van Deinselaan Enschede 051263 ----- J J Van Deinselaan, Enschede ----- J J Van Deinselaan 2, Enschede
+# P2 Wateroverlast Politie Landelijke Eenheid (Hoofdgebouw) Hoofdstra Drieber  gen-Rijsenburg 095134 ----- Hoofdstraat, Driebergen-Rijsenburg -----
+P2 BRT-03 Wateroverlast Maarten Harpertsz. Trompweg Dordrecht 186632 ----- Maarten Harpertsz Trompweg 186632, Dordrecht ----- Maarten Harpertsz Trompweg, Dordrecht 
+P1 BDH-02 met waterzuigers Wateroverlast (binnen) Dijkwacht LEIDDP164152 ----- Leiden ----- Dijkwacht, Leiderdorp
+P2 BDH-02 Wateroverlast (binnen) KDV Bibelebos Ter Lips VOORSC 155030 ----- Binnenweg, Wassenaar ----- Ter Lips 1, Voorschoten
+# P2 BTW-02 Wateroverlast LACO zwembad Borne `t Wooldrik Borne 051331 ----- Het Wooldrik, Borne -----
+P2 BDH-02 Wateroverlast (binnen) Sterreschans OEGSTG 161530 ----- Rijnsburg ----- Sterreschans, Oegstgeest
+# P2 BZB-02 Wateroverlast Mgr. Schaepmanlaan Dongen 207331 ----- Monseigneur Schaepmanlaan, Dongen -----
+# P2 BLB-01 Wateroverlast Prof. Eykmanlaan Hoensbroek 244241 ----- Professor Eykmanlaan, Hoensbroek -----
+P2 BNN-02 Wateroverlast P ----- Haren ----- delete
+P2 BDH-04 Wateroverlast Z.H.B.-hoven SGRAVH 157770 ----- Den Haag ----- delete 
+P2 BDH-01 Wateroverlast Politiebureau 34 (Ypenburg/Leidschenveen) Briganti SGRAVH 157430 ----- Den Haag ----- delete
+P2 BGM-01 Wateroverlast Torckpark Wageningen 073131 ----- Rustenburg 13, Wageningen ----- Torckpark, Wageningen
+# P2 BRT-02 Wateroverlast GGZ Delfland NWN Dr Noletstraat Schiedam 170431 ----- Doctor Noletstraat, Schiedam -----
+# P2 BGM-05 Wateroverlast Burg. Hustinxstraat Nijmegen 082131 ----- Burgemeester Hustinxstraat, Nijmegen -----
+# P1 BNH-02 Wateroverlast Grote Kerk Hoorn NH 105132 ----- Kerkplein, Hoorn -----
+P2 BDH-03 Wateroverlast (binnen) Florence Nightingalestr RIJSZH 155630 ----- Rijswijk ----- Florence Nightingalestraat, Rijswijk
+# Contact MKB! Wateroverlast (ovdbz) (OVDB) Markt Vlaardingen 179191 ----- Veerplein 99, Vlaardingen -----
+# P2 BDH-02 Wateroverlast (binnen) Dr. A. Schweitzerstraat TRAAR 162132 ----- Doctor Albert Schweitzerstraat, Ter Aar -----
+# P2 BRT-04 Wateroverlast dr. Brugsmastraat Vlaardingen 170331 ----- Doctor Brugsmastraat, Vlaardingen -----
+P2 BDH-04 Wateroverlast (binnen) Van den Boschstraat SGRAVH 157430 ----- Den Haag ----- Van Den Boschstraat, Den Haag 
+# P2 BNH-06 Wateroverlast Const. Huygensstraat Castricum 106547 ----- Constantijn Huygensstraat, Castricum -----
+# P2 BRT-08 Wateroverlast dr. Brugsmastraat Vlaardingen 170332 ----- Doctor Brugsmastraat, Vlaardingen -----
+# P2 BRT-02 Wateroverlast Heyermansstraat Spijkenisse 173131 ----- Heijermansstraat, Spijkenisse -----
+P2 BRT-03 Wateroverlast Woeste Willem Ben-Goerionstraat Rotterdam 171131 ----- Ben Goerionstraat, Rotterdam ----- Ben Goerionstraat 6, Rotterdam
+P2 BON-06 Wateroverlast De Paasvleugel `t Frusselt Vierhouten 067143 ----- Het Frusselt, Vierhouten ----- Het Frusselt 37, Vierhouten
+# P2 BZB-04 Wateroverlast Henry Dunanthof Zevenbergen 201032 ----- Henri Dunanthof, Zevenbergen -----
+# P2 BOB-01 Wateroverlast (binnen) (kelder/souterrain) Juffr Tempelmanlaan Nuenen 223741 ----- Juffrouw Tempelmanlaan, Nuenen -----
+P2 BNN-02 Wateroverlast Vakman Eggen Mr. Harm Smeengestraat Ruinen De Wolden 038971 ----- Meester Harm Smeengestraat 56, Ruinen ----- Meester Harm Smeengestraat 13, Ruinen
+# P2 BLB-07 Wateroverlast Ir Em Melottestraat Vaals 243541 ----- Ingenieur Em Mélottestraat, Vaals -----
+# P2 BLB-01 Wateroverlast St. Theresiastraat Hoensbroek 243941 ----- Sint Theresiastraat, Hoensbroek -----
+P2 BLB-02 Wateroverlast WZV Leontine De Gyselaar Amstenrade 243931 ----- De Gijselaar, Amstenrade ----- De Gijselaar 10, Amstenrade
+# P2 BLB-02 Wateroverlast Ir Em Melottestraat Vaals 243541 ----- Ingenieur Em Mélottestraat, Vaals -----
+P2 BLB-01 Wateroverlast Akerstraat Brunssum 244241 ----- Akerstraat Noord, Brunssum ----- Akerstraat, Brunssum
+P2 BZB-02 BR nacontrole wateroverlast Prisma Dr. Mollerstraat Dongen 207331 ----- Doctor Mollerstraat, Dongen ----- delete
+# P2 BLB-02 Wateroverlast Dr.Nolensstraat Kerkrade 243041 ----- Doctor Nolensstraat, Kerkrade -----
+# P2 BZB-03 Wateroverlast Burg Van den Drieslaan Oudenbosch 201231 ----- Burgemeester van der Drieslaan, Oudenbosch -----
+# P2 BGM-01 Wateroverlast `t Stegeslag Zevenaar 075531 ----- Het Stegeslag, Zevenaar -----
+# P2 BDH-04 Wateroverlast Ir. van der Sluijsplantsoen SGRAVH 155130 ----- Ingenieur van der Sluijsplantsoen, Den Haag -----
+# B-PLOEG ST. MICHIELSGESTEL RUSTIG OPKOMEN - P 2 BOB-02 WATEROVERLAST (BINNEN) MGR.HERMUSLAAN SINT-MICHIELSGESTEL 213631 ----- Monseigneur Hermuslaan, Sint-Michielsgestel -----
+# P2 BLB-06 Wateroverlast Prof. Eykmanlaan Hoensbroek 243591 ----- Professor Eykmanlaan, Hoensbroek -----
+# P2 BNN-01 Wateroverlast Geelen, Orthodontiepraktijk Burgemeester Tuinstraa Hoogezand 012133 ----- Burgemeester Tuinstraat, Hoogezand -----
+# P2 BLB-15 Wateroverlast VieCuri Venlo A) algemeen Medisch Centrum Tegelsew Venlo 232391 232381 ----- Tegelseweg, Venlo -----
+# P2 BNH-01 Wateroverlast Plataanstate Purmerend 115031 ----- Populierenstraat, Purmerend -----
+# P2 BNN-03 Wateroverlast Sinneblom-strjitte Kootstertille 024532 ----- Sinneblom Strjitte, Kootstertille -----
+# P2 BZB-02 Wateroverlast West-Havenstraat Colijnsplaat 194830 ----- West Havenstraat, Colijnsplaat -----
+# P2 BDH-03 Wateroverlast Mgr Bekkerslaan RIJSZH 155630 ----- Monseigneur Bekkerslaan, Rijswijk -----
+P2 BNH-06 Wateroverlast De Tien Gemeenten Aanleunwoningen Annette Poelmanstraat Purmerend 110563 ----- Hoornselaan 11, Purmerend ----- Annette Poelmanstraat, Purmerend
+P2 BMD-01 Wateroverlast Hendrik Valkenburglaantje Laren NH 142331 ----- Zevenend 33, Laren ----- Hendrik Valkenburglaan, Laren
+# P2 BZB-02 Wateroverlast Johan Pieter van den Brandestraat Middelburg 194533 ----- Johan Pieter van de Brandestraat, Middelburg -----
+# P2 BOB-02 Wateroverlast (binnen) Prof. Schermerhornlaan Helmond 223231 ----- Professor Schermerhornlaan, Helmond -----
+# P2 BLB-03 Wateroverlast Nattenhover Koestraat Urmond 244631 ----- Nattenhovener Koestraat, Urmond -----
+P2 BDH-02 Wateroverlast Meije NWKOOP 096331 ----- Nieuwstraat 9, De Waarden - Zegveld ----- Meije, Nieuwkoop
+# P2 BDH-03 Wateroverlast Rhynenburcherlaan HAZRDK 169232 ----- Rhijnenburcherlaan, Hazerswoude-Rijndijk -----
+# P2 BDH-05 Wateroverlast Dr. L.J. Rogierstraat SGRAVH 157730 ----- Doctor L.J. Rogierstraat, Den Haag -----
+P2 BNN-02 (GRIP 1) Wateroverlast Melchio ----- Heerenveen ----- delete
+# P2 BRT-01 Wateroverlast Dr. Kuyperkade Maassluis 170231 ----- Doctor Kuyperkade, Maassluis -----
+# P2 BAD-01 Wateroverlast (Etage: 10) , Kouwenoord Amsterdam 13ASA ----- Kouwenoordweg 70, Amsterdam -----
+# P2 BMD-02 Wateroverlast Oostermeent-Zuid Huizen 141342 ----- Oostermeent Zuid, Huizen -----
+# P2 BDH-01 Wateroverlast IJsseldijk-Noord ODKIJS 163630 ----- IJsseldijk Noord, Ouderkerk aan den IJssel -----
+# P2 Wateroverlast Dir van der Muhlenlaan Kerkrade 243041 ----- Directeur van der Mühlenlaan, Kerkrade -----
+# P2 BAD-02 Wateroverlast , Dr. Willem Dreesweg Amstelveen 13ASV2 ----- Doctor Willem Dreesweg, Amstelveen -----
+# P2 BNH-03 Wateroverlast Verpleeghuis Den Koogh Drs. F. Bijlweg Den Helder 104432 ----- Doctorandus F. Bijlweg, Den Helder -----
+# P2 BTW-01 Wateroverlast B.W. ter Kuilestraat Enschede 054131 ----- Benjamin Willem Ter Kuilestraat, Enschede -----
+P2 BDH-03 Wateroverlast (binnen) Willem van Rijswijckstr RIJSZH 155630 ----- Rijswijk ----- Willem van Rijswijckstraat, Rijswijk
+P2 BNN-04 Wateroverlast Alde Singel Gorredijk 026434 ----- Alde Dyk, Gorredijk ----- delete
+P2 Wateroverlast Vijfheerenlanden Vianen UT 095731 ----- Voorstraat 30, Vianen ----- Vijfheerenlanden, Vianen
+P2 BDH-05 Wateroverlast Zieken SGRAVH 157830 ----- Pletterijkade, Den Haag ----- delete
+# P2 BAD-02 Wateroverlast Woongebouw Parkrand Dr. H. Colijnstraat Amsterdam 13ASO ----- Doctor H. Colijnstraat, Amsterdam -----
+P2 BNN-02 Wateroverlast Cosis d`Olde Beke ----- Emmen ----- delete
+# P2 BRT-02 Wateroverlast Mr. Kesperweg Ridderkerk 173831 ----- Meester Kesperweg, Ridderkerk -----
+# P2 BLB-01 Wateroverlast M.L. Kingstraat Eijsden 243731 ----- Martin Luther Kingstraat, Eijsden -----
+# P2 BAD-06 Wateroverlast Prof. Paul Scholtenlaan Amstelveen 13ASV2 ----- Professor Paul Scholtenlaan, Amstelveen -----
+# P2 BGM-01 Wateroverlast `t Stegeslag Zevenaar 075531 ----- Het Stegeslag, Zevenaar -----
+# P2 BAD-01 Wateroverlast Kouwenoord Amsterdam 13ASA ----- Kouwenoordweg 70, Amsterdam -----
+P2 BDH-02 Wateroverlast De Markt KRIMLK 171231 ----- Rotterdam ----- delete
+P2 BDH-02 Wateroverlast Jamie Bennett Plaats SGRAVH 157230 ----- Den Haag ----- Plaats 11, Den Haag
+ALARM 24U-PLOEG DEN BOSCH - P 2 BOB-03 WATEROVERLAST (BINNEN) HERMAN MOERKERKLAAN ROSMALEN 212031 ----- Ploegweg, `s-Hertogenbosch ----- Herman Moerkerlaan, Rosmalen
+# P2 BMD-01 Wateroverlast Vondelschool Oud-Bussummerweg Bussum 141232 ----- Oud Bussummerweg, Bussum -----
+# P2 BDH-01 Wateroverlast Dr. L.J. Rogierstraat SGRAVH 157730 ----- Doctor L.J. Rogierstraat, Den Haag -----
+P2 BDH-01 Wateroverlast (binnen) Dr. L.J. Rogierstraat SGRAVH 157770 ----- Den Haag ----- delete
+P2 BDH-02 Wateroverlast (buiten) Dr. R.J. Fruinplantsoen SGRAVH 159633 ----- Buitenhof, Den Haag ----- Doctor R.J. Fruinplantsoen, Den Haag
+# P2 BZB-01 Wateroverlast `t Hoekske Ulvenhout 203145 ----- Het Hoekske, Ulvenhout -----
+P2 BNH-01 Wateroverlast (buiten) (Kazernecoordinator) contact MKBNH ----- Badhoevedorp ----- delete
+# P2 BZB-02 Wateroverlast Mgr. Leijtenstraat Breda 203133 ----- Monseigneur Leijtenstraat, Breda -----
+P2 BOB-01 Wateroverlast (binnen) Nazarethplein Best 221341 ----- Binnenweg, Best ----- Nazarethplein, Best
+P3 Wateroverlast N804 - Apeldoornseweg Hoenderloo Apeldoorn ----- Oude Apeldoornseweg, Apeldoorn ----- Apeldoornseweg, Hoenderloo
+# P2 BAD-04 Wateroverlast Mr. G. Groen van Prinstererlaan Amstelveen 13ASV1 ----- Meester G. Groen van Prinstererlaan, Amstelveen -----
+# P2 BNN-01 Wateroverlast Kanaal A NZ Emmer-Compascuum 038731 ----- Kanaal A Noordzijde, Emmer-Compascuum -----
+P2 BNN-02 Wateroverlast Cosis d`Olde Beke ----- Emmen ----- delete
+# P2 BDH-02 Wateroverlast Mgr. Nolenslaan `s-Gravenhage 157730 ----- Monseigneur Nolenslaan, Den Haag -----
+# P2 BRT-03 Wateroverlast Dr Wibautplein Schiedam 170431 ----- Doctor Wibautplein, Schiedam -----
+P2 BDH-02 Wateroverlast (binnen) Marienpark Leidschendam 155130 ----- Binnenweg, Leidschendam ----- Marienpark, Leidschendam
+# P2 BNN-01 Wateroverlast Oude-Molenstraat Assen 038231 ----- Oude Molenstraat, Assen -----
+# P2 BRT-01 Wateroverlast St. Helenabaai Capelle aan den IJssel 171131 ----- Sint Helenabaai, Capelle aan den IJssel -----
+# P2 BGM-01 Wateroverlast Mr E.N. van Kleffensstraat Arnhem 073731 ----- Meester E.N. van Kleffensstraat, Arnhem -----
+# P2 BRT-01 Wateroverlast Dr. J.M. den Uyllaan Spijkenisse 173131 ----- Doctor J.M. Den Uyllaan, Spijkenisse -----
+# P2 BDH-01 Wateroverlast Om-en-Bij `s-Gravenhage 157830 150001 ----- Om en bij, Den Haag -----
+# P2 BLB-02 Wateroverlast Scholtis vd Hardtstraat Stein 244531 ----- Scholtis van de Hardtstraat, Stein -----
+# P2 BRT-02 Wateroverlast Koningin Wilhelminahaven NZ Vlaardingen 170331 ----- Koningin Wilhelminahaven Noordzijde, Vlaardingen -----
+# P2 BDH-02 Wateroverlast Parallelweg-Zuid Nieuwerkerk ad IJssel 163731 ----- Parallelweg Zuid, Nieuwerkerk -----
+P2 Wateroverlast (Inzet AED) Anth. Fokkerstraat Zwijndrecht ----- Anthonie Fokkerstraat 86, Zwijndrecht ----- delete
+# P2 BRT-02 Wateroverlast Anth. Fokkerstraat Zwijndrecht 186331 ----- Anthonie Fokkerstraat, Zwijndrecht -----
+# P2 BRT-02 Wateroverlast Mr. Van Houtenstraat Ridderkerk 173831 ----- Meester van Houtenstraat, Ridderkerk -----
+# P1 BLB-01 Wateroverlast Dr. Dreesflat Geleen 244631 ----- Doctor Dreesflat, Geleen -----
+# P2 BDH-06 Wateroverlast (binnen) Dr J. de Koninglaan Schipluiden 156130 ----- Doctor J. de Koninglaan, Schipluiden -----
+P2 BDH-07 Wateroverlast (binnen) d`Aumeriestraat `s-Gravenhage 159631 ----- Den Haag ----- D'aumeriestraat, Den Haag
+P3 BRT-07 Wateroverlast Maarten Harpertsz. Trompweg Dordrecht 186631 ----- Maarten Harpertsz Trompweg 186631, Dordrecht ----- Maarten Harpertsz Trompweg, Dordrecht
+# P2 BMD-02 Wateroverlast Elbert Mooijlaan Kortenhoef 142631 ----- Elbert Mooylaan, Kortenhoef -----
+# P2 BNN-05 Wateroverlast Prof Ridderbosstraat Bedum 011631 ----- Professor Doctor J. Ridderbosstraat, Bedum -----
+# P3 BRT-09 Wateroverlast Kort-Ambachtlaan Zwijndrecht 186331 ----- Kort Ambachtlaan, Zwijndrecht -----
+# P2 BNN-02 Wateroverlast woning Verlengde Vaart ZZ Erica 038633 ----- Verlengde Vaart Zuidzijde, Erica -----
+# P2 BDH-06 Wateroverlast (binnen) Prof. van Arkelstraat `s-Gravenzande 156530 ----- Professor van Arkelstraat, `s-Gravenzande -----
+# P2 BNN-03 Wateroverlast Mr. A.J. de Sitterstraat Winschoten 012931 ----- Meester A.J. de Sitterstraat, Winschoten -----
+P2 BNN-01 Wateroverlast Burg. J.G. Legroweg Paterswolde 038131 ----- Burgemeester J.G. Legroweg 38131, Paterswolde ----- Burgemeester J.G. Legroweg, Paterswolde
+# P2 BTW-01 Wateroverlast Hancateweg-Oost Hellendoorn 059037 ----- Hancateweg Oost, Hellendoorn -----
+P2 BNN-02 Wateroverlast Cosis d`Olde Beke ----- Emmen ----- delete
+P2 BDH-06 Wateroverlast (binnen) Coloradostroom Zoetermeer 155330 ----- Binnenweg, Zoetermeer ----- delete
+# P2 BLB-01 Wateroverlast Burg. Cremersstraat Nuth 243161 243441 ----- Burgemeester Cremersstraat, Nuth -----
+# P2 BRT-02 Wateroverlast Dr. Jan Schoutenlaan Maassluis 170231 ----- Doctor Jan Schoutenlaan, Maassluis -----
+# P2 BTW-01 Wateroverlast Jagers banketbakkerij H.J. van Heekplein Enschede 054131 ----- Hendrik Jan van Heekplein, Enschede -----
+# P2 BNN-01 Wateroverlast Bartholomeus vd Helststr Hoogezand 012133 ----- Bartholomeus van der Helststraat, Hoogezand -----
