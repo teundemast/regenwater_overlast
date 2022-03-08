@@ -31,8 +31,8 @@ def print_json(data):
 def main():
     key = os.environ['maps_key']
     api = MapsApi(key=key)
-    data = load_data('parsed.json')
-    print('[')
+    data = load_data('parsed.json')['data']
+    data_coord = []
     for d in data:
         google_results = None
         try:
@@ -50,12 +50,16 @@ def main():
 
         if google_results and google_results['status'] == 'OK':
             d['google_results'] = google_results['results']
-            print(json.dumps(d) + ",")
-        else:
-            print("ERROR")
-            print(json.dumps(d) + ",")
+            data_coord.append(json.dumps(d))
+        # else:
+        #     print("ERROR")
+        #     print(json.dumps(d) + ",")
+            
+    out_file = open("coord.json", "w")
+    data = {"data": data_coord}
+    json.dump(data, out_file, indent=6)
+    out_file.close()
 
-    print(']')
 
 
 if __name__ == '__main__':

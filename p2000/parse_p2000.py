@@ -21,7 +21,6 @@ def remove_false_calls(data):
     for d in data:
         if not d['false']: 
             keep.append(d)
-            
     return keep 
         
 def remove_number_from_address(string):
@@ -108,15 +107,15 @@ def contains_wateroverlast(data):
 def check_address_with_message(data):
     # this function can used for validation
     
-    with open('patch2.txt', 'w') as f:
+    with open('patch3.txt', 'w') as f:
         
         for d in data:
-            # if not d['correct']:
-            address = unidecode(d['address'].split(',')[0].lower())
-            match = re.search(r"^\d?\d?[`a-z ]+", address)
+            if not d['correct']:
+                address = unidecode(d['address'].split(',')[0].lower())
+                match = re.search(r"^\d?\d?[`a-z ]+", address)
 
-            if unidecode(match.group()) not in unidecode(d['message'].lower()):
-                f.write(f"{d['message']} ----- {d['address']} -----\n")
+                if unidecode(match.group()) not in unidecode(d['message'].lower()):
+                    f.write(f"{d['message']} ----- {d['address']} -----\n")
 
     return data
 
@@ -201,13 +200,16 @@ def main():
     data = fix_adresses(data)
     data = remove_double(data)
     
-    check_address_with_message(data)
-    # data = patch(data)
+    data = patch(data)
+    # check_address_with_message(data)
+
     
     
     # check_oude_nieuwe(data)
-
-    # print_json(data)
+    out_file = open("patched.json", "w")
+    data = {"data": data}
+    json.dump(data, out_file, indent=6)
+    out_file.close()
 
 
 if __name__ == '__main__':
