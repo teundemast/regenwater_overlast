@@ -1,0 +1,125 @@
+[{
+    "prio": 2,
+    "message": "P2 Graag nogmaals contact MKB Wateroverlast Markt Maassluis",
+    "service": "Brandweer",
+    "date": "2022-01-26 22:31:33",
+    "prio_text": "",
+    "region": "Rotterdam-Rijnmond",
+    "region_url": "rotterdam-rijnmond",
+    "for": [
+          "1400802"
+    ],
+    "capcodes": [
+          "1400802"
+    ],
+    "place": "Maassluis",
+    "place_url": "maassluis",
+    "address": "Markt 14, Maassluis",
+    "zipcode": "3142",
+    "province": "Zuid-Holland",
+    "latitude": 51.9222677,
+    "longitude": 4.254365,
+    "streetview": true,
+    "bridge": false,
+    "test": false,
+    "auto": false,
+    "false": false,
+    "url": "rotterdam-rijnmond/maassluis/p2-graag-nogmaals-contact-mkb-wateroverlast-markt-maassluis",
+    "id": 16784484,
+    "road_number": "",
+    "road_side": "",
+    "road_hecto": "",
+    "correct": false,
+    "google_results": [
+          {
+                "address_components": [
+                      {
+                            "long_name": "14",
+                            "short_name": "14",
+                            "types": [
+                                  "street_number"
+                            ]
+                      },
+                      {
+                            "long_name": "Markt",
+                            "short_name": "Markt",
+                            "types": [
+                                  "route"
+                            ]
+                      },
+                      {
+                            "long_name": "Maassluis",
+                            "short_name": "Maassluis",
+                            "types": [
+                                  "locality",
+                                  "political"
+                            ]
+                      },
+                      {
+                            "long_name": "Maassluis",
+                            "short_name": "Maassluis",
+                            "types": [
+                                  "administrative_area_level_2",
+                                  "political"
+                            ]
+                      },
+                      {
+                            "long_name": "Zuid-Holland",
+                            "short_name": "ZH",
+                            "types": [
+                                  "administrative_area_level_1",
+                                  "political"
+                            ]
+                      },
+                      {
+                            "long_name": "Netherlands",
+                            "short_name": "NL",
+                            "types": [
+                                  "country",
+                                  "political"
+                            ]
+                      },
+                      {
+                            "long_name": "3142 GB",
+                            "short_name": "3142 GB",
+                            "types": [
+                                  "postal_code"
+                            ]
+                      }
+                ],
+                "formatted_address": "Markt 14, 3142 GB Maassluis, Netherlands",
+                "geometry": {
+                      "bounds": {
+                            "northeast": {
+                                  "lat": 51.9222737,
+                                  "lng": 4.254504799999999
+                            },
+                            "southwest": {
+                                  "lat": 51.9221976,
+                                  "lng": 4.254337599999999
+                            }
+                      },
+                      "location": {
+                            "lat": 51.9222479,
+                            "lng": 4.2543926
+                      },
+                      "location_type": "ROOFTOP",
+                      "viewport": {
+                            "northeast": {
+                                  "lat": 51.9236963302915,
+                                  "lng": 4.255733680291502
+                            },
+                            "southwest": {
+                                  "lat": 51.9209983697085,
+                                  "lng": 4.253035719708497
+                            }
+                      }
+                },
+                "place_id": "ChIJ_79ztZdMxEcRAQZyt5xDAUA",
+                "types": [
+                      "premise"
+                ]
+          }
+    ]
+}
+]
