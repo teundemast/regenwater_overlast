@@ -11,9 +11,10 @@ from osgeo import gdal
 
 import numpy as np
 import pandas as pd
+import random
 
 begin = '2016-01-01 00:00:00'
-# begin = '2022-01-01 00:00:00'
+# begin = '2022-01-02 00:00:00'
 end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
 
@@ -28,7 +29,7 @@ import os
 total = 0
 count = 0
 btime = time.time()
-
+rain_treshold = 500
 
 # helper functions
 def get_data(data, a):
@@ -62,8 +63,13 @@ def get_precipitation_data(row):
     lat = row['lat']
     lon = row['lng']
     rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, date.hour, date.minute, lat, lon, 12)
+    
     return rain
 
+def get_past3hours(date, lat, lon):
+    rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, date.hour, date.minute, lat, lon, 3)
+    return sum(rain)
+    
 def calc_sums(row):
     data = []
     try:
@@ -81,6 +87,9 @@ def calc_sums(row):
         
     return data
 
+def same_day(datetime1, datetime2):
+    return datetime1.year == datetime2.year and datetime1.month == datetime2.month and datetime1.day == datetime2.day
+
 #https://stackoverflow.com/questions/50559078/generating-random-dates-within-a-given-range-in-pandas
 def random_datetimes_or_dates(start, end, out_format='datetime', n=10): 
 
@@ -97,7 +106,7 @@ def random_datetimes_or_dates(start, end, out_format='datetime', n=10):
     start_u = start.value//divide_by
     end_u = end.value//divide_by
 
-    return pd.to_datetime(np.random.randint(start_u, end_u, n), unit=unit) 
+    return pd.to_datetime(np.random.randint(start_u, end_u, n), unit=unit).to_pydatetime()[0] 
 
 
 # step 1
@@ -127,36 +136,38 @@ df1['prec_sums'] = df1.apply(calc_sums, axis=1)
 cols = ['sum'+str(i+1) for i in range(12)]
 df1[cols] = pd.DataFrame(df1.prec_sums.tolist(), index=df1.index)
 df1['past3hours'] = df1['sum1'] + df1['sum2'] + df1['sum3']
-df1 = df1[(df1.past3hours > 500)]
+
+
+df1 = df1[(df1.past3hours > rain_treshold)]
 df1 = df1.drop(columns=cols)
+df1 = df1.drop(columns=['prec12', 'prec_sums'])
 
 # print(df1)
 # step 4
-data0 = {'lat':[], 'lng':[], 'date':[], 'target': []}
-n = 5
+data0 = {'lat':[], 'lng':[], 'date':[], 'target': [], 'past3hours': []}
+
 def sample_dependent(data):
-    data0["lat"].append(data["lat"])
-    data0["lng"].append(data["lng"])
+    past3hours = data["past3hours"]
+    date = datetime.strptime(str(data['date']), strfformat)
+    lat = data["lat"]
+    lng = data["lng"]
+    data0["lat"].append(lat)
+    data0["lng"].append(lng)
     data0['target'].append(0)
     start_date = pd.to_datetime(begin)
     end_date = pd.to_datetime(end)
     random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
     random_date = random_date.to_pydatetime()[0]
+    while same_day(random_date, date):
+        random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
+    
     data0["date"].append(random_date)
+    max_rain = (past3hours - rain_treshold)/2   + rain_treshold
+    data0["past3hours"].append(random.randint(rain_treshold, max_rain))
+    print("Negative sample added")
 
 df1.apply(sample_dependent, axis=1)
 df0 = pd.DataFrame(data0)
-
-# # step 5
-total = len(df0)
-count = 0
-btime = time.time()
-df0 = df0.sort_values(by=['date'])
-df0['prec12'] = df0.apply(get_precipitation_data, axis=1)
-df0['prec_sums'] = df0.apply(calc_sums, axis=1)
-df0[cols] = pd.DataFrame(df0.prec_sums.tolist(), index=df0.index)
-df0['past3hours'] = df0['sum1'] + df0['sum2'] + df0['sum3']
-df0 = df0.drop(columns=cols)
 
 df = pd.concat([df0, df1], ignore_index=True)
 
@@ -189,12 +200,12 @@ def add_layers(data):
         rdy = rdconverter.gps2Y(lat,lng)
 
         x, y = round(rdx, 2), round(rdy, 2)
-        d = 100
+        d = 10
 
-        arr = np.empty((1,400,400))
+        arr = np.empty((400,400))
 
         ahn_data = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
-        arr[0] = ahn_data.ReadAsArray()
+        arr = ahn_data.ReadAsArray()
 
         return arr
     except Exception as e:
