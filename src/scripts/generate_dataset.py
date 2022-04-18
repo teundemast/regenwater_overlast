@@ -147,7 +147,6 @@ df1 = df1.drop(columns=['prec12', 'prec_sums'])
 data0 = {'lat':[], 'lng':[], 'date':[], 'target': [], 'past3hours': []}
 
 def sample_dependent(data):
-    past3hours = data["past3hours"]
     date = datetime.strptime(str(data['date']), strfformat)
     lat = data["lat"]
     lng = data["lng"]
@@ -158,11 +157,8 @@ def sample_dependent(data):
     end_date = pd.to_datetime(end)
     random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
     random_date = random_date.to_pydatetime()[0]
-    while same_day(random_date, date):
-        random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
     
-    data0["date"].append(random_date)
-    max_rain = (past3hours - rain_treshold)/2   + rain_treshold
+    max_rain = data["past3hours"]
     data0["past3hours"].append(random.randint(rain_treshold, max_rain))
     print("Negative sample added")
 
@@ -202,7 +198,7 @@ def add_layers(data):
         x, y = round(rdx, 2), round(rdy, 2)
         d = 10
 
-        arr = np.empty((400,400))
+        arr = np.empty((20,20))
 
         ahn_data = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
         arr = ahn_data.ReadAsArray()
@@ -216,11 +212,11 @@ df['layers'] = df.apply(add_layers, axis=1)
 
 is_dslab = os.getenv('DS_LAB', None)
 if is_dslab:
-    dir_ = '/local/s2656566/'
+    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/'
 else:
     dir_ = ''
 
 
-df.to_pickle(dir_ + '50-500.pkl', protocol=4)
+df.to_pickle(dir_ + 'dataset.pkl', protocol=4)
 
 print(df)
