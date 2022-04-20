@@ -18,9 +18,9 @@ begin = '2016-01-01 00:00:00'
 end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
 
-from helpers import rdconverter
-from helpers.neerslag import precipitation_nl
-from helpers.layerbuilder import ahn_layer
+from helpers.helpers import rdconverter
+from helpers.helpers.neerslag import precipitation_nl
+from helpers.helpers.layerbuilder import ahn_layer
 
 from datetime import datetime
 import time
@@ -119,7 +119,6 @@ df1 = df1[['lat','lng','target','date']]
 df1 = df1.dropna()
 
 df1['date'] = df1.apply(parse_datetime, axis=1)
-
 # df1 = df1[150:200]
 
 # step 2
