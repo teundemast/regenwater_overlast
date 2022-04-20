@@ -18,7 +18,7 @@ begin = '2016-01-01 00:00:00'
 end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
 
-from helpers.helpers import rdconverter
+from regenoverlast import rdconverter
 from helpers.helpers.neerslag import precipitation_nl
 from helpers.helpers.layerbuilder import ahn_layer
 
