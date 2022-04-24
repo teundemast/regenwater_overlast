@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import random
 
-begin = '2016-01-01 00:00:00'
+begin = '2016-01-02 00:00:00'
 # begin = '2022-01-02 00:00:00'
 end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
@@ -119,6 +119,7 @@ df1 = df1[['lat','lng','target','date']]
 df1 = df1.dropna()
 
 df1['date'] = df1.apply(parse_datetime, axis=1)
+df1 = df1[begin < df1['date'] < end]
 # df1 = df1[150:200]
 
 # step 2
