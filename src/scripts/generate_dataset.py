@@ -18,9 +18,9 @@ begin = '2016-01-01 00:00:00'
 end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
 
-from regenoverlast.src.helpers import rdconverter
-from helpers.helpers.neerslag import precipitation_nl
-from helpers.helpers.layerbuilder import ahn_layer
+from helpers import rdconverter
+from helpers.neerslag import precipitation_nl
+from helpers.layerbuilder import ahn_layer
 
 from datetime import datetime
 import time
@@ -211,7 +211,7 @@ df['layers'] = df.apply(add_layers, axis=1)
 
 is_dslab = os.getenv('DS_LAB', None)
 if is_dslab:
-    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/'
+    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data'
 else:
     dir_ = ''
 

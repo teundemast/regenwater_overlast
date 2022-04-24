@@ -11,11 +11,11 @@ from sklearn.metrics import classification_report, confusion_matrix, precision_s
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import cross_val_score
 from sklearn import metrics
-from autosklearn.experimental.askl2 import AutoSklearn2Classifier
+# from autosklearn.experimental.askl2 import AutoSklearn2Classifier
 import pandas as pd
 import numpy as np
 
-df = pd.read_pickle("/local/s2656566/regen_project/50-500.pkl").reset_index()
+df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset.pkl").reset_index()
 df = df.head()
 
 dict = {
