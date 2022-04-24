@@ -119,7 +119,7 @@ df1 = df1[['lat','lng','target','date']]
 df1 = df1.dropna()
 
 df1['date'] = df1.apply(parse_datetime, axis=1)
-df1 = df1[begin < df1['date'] < end]
+df1 = df1[(begin < df1['date']) & (df1['date'] < end)]
 # df1 = df1[150:200]
 
 # step 2
