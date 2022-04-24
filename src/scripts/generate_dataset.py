@@ -156,7 +156,7 @@ def sample_dependent(data):
     start_date = pd.to_datetime(begin)
     end_date = pd.to_datetime(end)
     random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
-    
+    data0["date"].append(random_date)
     max_rain = data["past3hours"]
     data0["past3hours"].append(random.randint(rain_treshold, max_rain))
     print("Negative sample added")
