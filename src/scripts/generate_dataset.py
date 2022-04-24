@@ -156,7 +156,6 @@ def sample_dependent(data):
     start_date = pd.to_datetime(begin)
     end_date = pd.to_datetime(end)
     random_date = random_datetimes_or_dates(start_date, end_date,n=1, out_format="datetime")
-    random_date = random_date.to_pydatetime()[0]
     
     max_rain = data["past3hours"]
     data0["past3hours"].append(random.randint(rain_treshold, max_rain))
