@@ -1,4 +1,4 @@
-# from osgeo import gdal
+from osgeo import gdal
 
 # this script generates the dataset which we can apply machine learning to
 # 1. get all positive examples
@@ -20,7 +20,7 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 
 from helpers import rdconverter
 from neerslag import precipitation_nl
-# from helpers.layerbuilder import ahn_layer
+from helpers.layerbuilder import ahn_layer
 
 from datetime import datetime
 import time
