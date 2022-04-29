@@ -211,7 +211,7 @@ df['layers'] = df.apply(add_layers, axis=1)
 
 is_dslab = os.getenv('DS_LAB', None)
 if is_dslab:
-    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data'
+    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
 else:
     dir_ = ''
 
