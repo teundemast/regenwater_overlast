@@ -20,7 +20,7 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 
 from helpers import rdconverter
 from neerslag import precipitation_nl
-from helpers.layerbuilder import ahn_layer
+from slak import ahn_layer
 
 from datetime import datetime
 import time
