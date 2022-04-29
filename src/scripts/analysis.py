@@ -15,7 +15,7 @@ from sklearn import metrics
 import pandas as pd
 import numpy as np
 
-df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset.pkl").reset_index()
+df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/dataset.pkl").reset_index()
 df = df.head()
 
 dict = {
