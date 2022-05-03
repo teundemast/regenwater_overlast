@@ -21,7 +21,7 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 from helpers import rdconverter
 from neerslag import precipitation_nl
 from slak import ahn_layer
-from depression import calcDepression
+from depression import calcDepression, scalar
 
 from datetime import datetime
 import time
@@ -196,24 +196,20 @@ def add_layers(data):
         rdy = rdconverter.gps2Y(lat,lng)
 
         x, y = round(rdx, 2), round(rdy, 2)
-        d = 10
-        d1 = 50
-        d2 = 100
-        d3 = 200
+        d = 150
         arr = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
-        arr1 = ahn.get_gdal_dataset(x-d1, x+d1, y-d1, y+d1)
-        arr2 = ahn.get_gdal_dataset(x-d2, x+d2, y-d2, y+d2)
-        arr3 = ahn.get_gdal_dataset(x-d3, x+d3, y-d3, y+d3)
         arr = arr.ReadAsArray()
-        arr1 = arr1.ReadAsArray()
-        arr2 = arr2.ReadAsArray()
-        arr3 = arr3.ReadAsArray()
+        arr1 = scalar(arr, 0.2)
+        arr2 = scalar(arr, 0.4)
+        arr3 = scalar(arr, 0.6)
+        arr4 = scalar(arr, 0.8)
         score = calcDepression(arr)
         score1 = calcDepression(arr1)
         score2 = calcDepression(arr2)
         score3 = calcDepression(arr3)
+        score4 = calcDepression(arr4)
         
-        array = np.array([score, score1, score2, score3])
+        array = np.array([score, score1, score2, score3, score4])
         return array
     except Exception as e:
         print(e)
