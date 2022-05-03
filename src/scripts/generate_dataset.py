@@ -21,6 +21,7 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 from helpers import rdconverter
 from neerslag import precipitation_nl
 from slak import ahn_layer
+from depression import calcDepression
 
 from datetime import datetime
 import time
@@ -147,7 +148,6 @@ df1 = df1.drop(columns=['prec12', 'prec_sums'])
 data0 = {'lat':[], 'lng':[], 'date':[], 'target': [], 'past3hours': []}
 
 def sample_dependent(data):
-    date = datetime.strptime(str(data['date']), strfformat)
     lat = data["lat"]
     lng = data["lng"]
     data0["lat"].append(lat)
@@ -196,13 +196,20 @@ def add_layers(data):
 
         x, y = round(rdx, 2), round(rdy, 2)
         d = 10
-
-        arr = np.empty((20,20))
-
-        ahn_data = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
-        arr = ahn_data.ReadAsArray()
-
-        return arr
+        d1 = 50
+        d2 = 100
+        d3 = 200
+        arr = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d).ReadAsArray()
+        arr1 = ahn.get_gdal_dataset(x-d1, x+d1, y-d1, y+d1).ReadAsArray()
+        arr2 = ahn.get_gdal_dataset(x-d2, x+d2, y-d2, y+d2).ReadAsArray
+        arr3 = ahn.get_gdal_dataset(x-d3, x+d3, y-d3, y+d3).ReadAsArray()
+        score = calcDepression(arr)
+        score1 = calcDepression(arr1)
+        score2 = calcDepression(arr2)
+        score3 = calcDepression(arr3)
+        
+        array = np.array([score, score1, score2, score3])
+        return array
     except Exception as e:
         print(e)
         return None
@@ -212,6 +219,6 @@ df['layers'] = df.apply(add_layers, axis=1)
 dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
 
 
-df.to_pickle(dir_ + 'dataset.pkl', protocol=4)
+df.to_pickle(dir_ + 'dataset_depression.pkl', protocol=4)
 
 print(df)
