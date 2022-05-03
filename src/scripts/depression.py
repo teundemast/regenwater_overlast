@@ -63,7 +63,7 @@ def scalar(array: np.ndarray, scale: float):
             except ValueError:
                 result[count] = value[decrease - 1:len_x-decrease]
         count += 1
-
+    return result
 
 
 if __name__ == '__main__':
