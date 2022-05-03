@@ -112,7 +112,7 @@ def random_datetimes_or_dates(start, end, out_format='datetime', n=10):
 
 # step 1
 df1 = pd.read_json('src/data/merged_precise_coord.json')
-df1 = df1.head()
+# df1 = df1.head()
 df1 = df1.dropna()
 df1['lat'] = df1['google_results'].apply(get_data, args=('lat',))
 df1['lng'] = df1['google_results'].apply(get_data, args=('lng',))
