@@ -112,6 +112,7 @@ def random_datetimes_or_dates(start, end, out_format='datetime', n=10):
 
 # step 1
 df1 = pd.read_json('src/data/merged_precise_coord.json')
+df1 = df1.head()
 df1 = df1.dropna()
 df1['lat'] = df1['google_results'].apply(get_data, args=('lat',))
 df1['lng'] = df1['google_results'].apply(get_data, args=('lng',))
@@ -199,10 +200,14 @@ def add_layers(data):
         d1 = 50
         d2 = 100
         d3 = 200
-        arr = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d).ReadAsArray()
-        arr1 = ahn.get_gdal_dataset(x-d1, x+d1, y-d1, y+d1).ReadAsArray()
-        arr2 = ahn.get_gdal_dataset(x-d2, x+d2, y-d2, y+d2).ReadAsArray
-        arr3 = ahn.get_gdal_dataset(x-d3, x+d3, y-d3, y+d3).ReadAsArray()
+        arr = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
+        arr1 = ahn.get_gdal_dataset(x-d1, x+d1, y-d1, y+d1)
+        arr2 = ahn.get_gdal_dataset(x-d2, x+d2, y-d2, y+d2)
+        arr3 = ahn.get_gdal_dataset(x-d3, x+d3, y-d3, y+d3)
+        arr = arr.ReadAsArray()
+        arr1 = arr1.ReadAsArray()
+        arr2 = arr2.ReadAsArray()
+        arr3 = arr3.ReadAsArray()
         score = calcDepression(arr)
         score1 = calcDepression(arr1)
         score2 = calcDepression(arr2)
