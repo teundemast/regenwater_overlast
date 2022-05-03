@@ -209,11 +209,7 @@ def add_layers(data):
 
 df['layers'] = df.apply(add_layers, axis=1)
 
-is_dslab = os.getenv('DS_LAB', None)
-if is_dslab:
-    dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-else:
-    dir_ = ''
+dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
 
 
 df.to_pickle(dir_ + 'dataset.pkl', protocol=4)
