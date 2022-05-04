@@ -19,7 +19,7 @@ import numpy as np
 
 df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset_d5.pkl").reset_index()
 is_dslab = os.getenv('DS_LAB', None)
-
+df = df.dropna()
 
 dict = {
     "rain" : [],
