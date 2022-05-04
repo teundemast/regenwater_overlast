@@ -196,21 +196,21 @@ def add_layers(data):
         rdy = rdconverter.gps2Y(lat,lng)
 
         x, y = round(rdx, 2), round(rdy, 2)
-        d = 150
+        d = 5
         arr = ahn.get_gdal_dataset(x-d, x+d, y-d, y+d)
         arr = arr.ReadAsArray()
-        arr1 = scalar(arr, 0.2)
-        arr2 = scalar(arr, 0.4)
-        arr3 = scalar(arr, 0.6)
-        arr4 = scalar(arr, 0.8)
-        score = calcDepression(arr)
-        score1 = calcDepression(arr1)
-        score2 = calcDepression(arr2)
-        score3 = calcDepression(arr3)
-        score4 = calcDepression(arr4)
+        # arr1 = scalar(arr, 0.2)
+        # arr2 = scalar(arr, 0.4)
+        # arr3 = scalar(arr, 0.6)
+        # arr4 = scalar(arr, 0.8)
+        # score = calcDepression(arr)
+        # score1 = calcDepression(arr1)
+        # score2 = calcDepression(arr2)
+        # score3 = calcDepression(arr3)
+        # score4 = calcDepression(arr4)
         
-        array = np.array([score, score1, score2, score3, score4])
-        return array
+        # array = np.array([score, score1, score2, score3, score4])
+        return arr
     except Exception as e:
         print(e)
         return None
@@ -220,6 +220,6 @@ df['layers'] = df.apply(add_layers, axis=1)
 dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
 
 
-df.to_pickle(dir_ + 'dataset_depression.pkl', protocol=4)
+df.to_pickle(dir_ + 'dataset_d5.pkl', protocol=4)
 
 print(df)
