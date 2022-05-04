@@ -29,7 +29,9 @@ listofarr = []
 column = "layers"
 
 def normalize(row):
+        print(row[column])
         height = row[column]
+        print(height)
         nans = height > 1000
         height[nans] = np.nan
         height = (height-np.nanmean(height))/np.nanstd(height)
