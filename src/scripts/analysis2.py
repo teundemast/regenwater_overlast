@@ -19,7 +19,7 @@ import numpy as np
 
 df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset_depression.pkl").reset_index()
 is_dslab = os.getenv('DS_LAB', None)
-
+df = df.dropna()
 
 dict = {
     "rain" : [],
@@ -29,9 +29,9 @@ listofarr = []
 column = "layers"
 
 def normalize(row):
-        print(row[column])
+        # print(row[column])
         height = row[column]
-        print(height)
+        # print(height)
         nans = height > 1000
         height[nans] = np.nan
         height = (height-np.nanmean(height))/np.nanstd(height)
