@@ -17,7 +17,7 @@ label_encoder = LabelEncoder()
 import pandas as pd
 import numpy as np
 
-df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset.pkl").reset_index()
+df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset_d5.pkl").reset_index()
 is_dslab = os.getenv('DS_LAB', None)
 
 
@@ -62,7 +62,7 @@ df = df.reset_index(drop=True)
 print(df.head())
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
-resultFile = open (resultFolder +"resultautosklearn.txt", "w+")
+resultFile = open (resultFolder +"result400par.txt", "w+")
      #load data
 rain_p2000 = df 
 print("data loaded")

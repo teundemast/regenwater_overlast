@@ -1,0 +1,13 @@
+result 1600 parameters:
+Average accuracy: 0.6276995305164319
+Average Precision: 0.6417794784567051
+Average Recall: 0.5984570622465173
+
+
+result preprocessing height:
+Average accuracy: 0.6067200214611463
+Average Precision: 0.6134143441829936
+Average Recall: 0.6083406806559689
+
+
+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
