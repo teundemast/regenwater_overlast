@@ -39,7 +39,7 @@ def normalize(row):
         return height
 
 def reshape(arr):
-        result = result.flatten()
+        result = arr.flatten()
         dfArr = pd.DataFrame(result)
         dfArr = dfArr.transpose()
         arr = arr.to_frame()
