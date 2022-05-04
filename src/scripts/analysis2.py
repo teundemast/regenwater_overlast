@@ -52,7 +52,7 @@ def reshape(arr):
         print(arr)
         listofarr.append(arr)
 
-df[column] = df.apply(normalize, axis=1)
+# df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
 
