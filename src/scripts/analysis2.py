@@ -83,7 +83,7 @@ features = rain_p2000.drop(columns=['target'])
     
 # Saving feature names for later use
 feature_list = list(features.columns)
-    
+print(feature_list)    
 features = np.asarray(features)
 print(labels.shape)
 #k-fold cross validation
