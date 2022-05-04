@@ -31,11 +31,10 @@ column = "layers"
 def normalize(row):
         # print(row[column])
         height = row[column]
+        print(height)
         # print(height)
-        nans = height > 1000
-        height[nans] = np.nan
         height = (height-np.nanmean(height))/np.nanstd(height)
-        height[np.isnan(height)] = 3
+        print(height)
         return height
 
 def reshape(arr):
@@ -49,10 +48,10 @@ def reshape(arr):
         arr = arr.reset_index()
         dfArr = dfArr.reset_index()
         arr = arr.join(dfArr, lsuffix="l")
-        # print(arr)
+        print(arr)
         listofarr.append(arr)
 
-# df[column] = df.apply(normalize, axis=1)
+df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
 
