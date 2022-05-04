@@ -49,7 +49,7 @@ def reshape(arr):
         arr = arr.reset_index()
         dfArr = dfArr.reset_index()
         arr = arr.join(dfArr, lsuffix="l")
-        print(arr)
+        # print(arr)
         listofarr.append(arr)
 
 # df[column] = df.apply(normalize, axis=1)
