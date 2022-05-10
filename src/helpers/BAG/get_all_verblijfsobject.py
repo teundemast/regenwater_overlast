@@ -9,9 +9,9 @@ final_df = pd.DataFrame()
 
 times = []
 
-for i in range(1,1773):
+for i in range(1,2059):
 	begint = time.time()
-	df = pdx.read_xml("data/9999VBO08032021/9999VBO08032021-{:06d}.xml".format(i), 
+	df = pdx.read_xml("data/9999VBO08032022/9999VBO08032022-{:06d}.xml".format(i), 
 		['sl-bag-extract:bagStand', 'sl:standBestand', 'sl:stand'])
 
 	key_columns = ['Objecten:naam', 'Objecten:type', 'Objecten-ref:WoonplaatsRef', 'Objecten:identificatie']
