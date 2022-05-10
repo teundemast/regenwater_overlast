@@ -1,4 +1,3 @@
-import pandas_read_xml as pdx
 import pandas as pd
 import numpy as np
 
@@ -11,11 +10,9 @@ times = []
 
 for i in range(1,2059):
 	begint = time.time()
-	df = pdx.read_xml("data/9999VBO08032022-{:06d}.xml".format(i), 
-		['sl-bag-extract:bagStand', 'sl:standBestand', 'sl:stand'])
-
+	df = pd.read_xml("data/9999VBO08032022-{:06d}.xml".format(i))
+	print(df)
 	key_columns = ['Objecten:naam', 'Objecten:type', 'Objecten-ref:WoonplaatsRef', 'Objecten:identificatie']
-	df = pdx.fully_flatten(df)
 	# print(len(df.drop_duplicates(subset='sl-bag-extract:bagObject|Objecten:Verblijfsobject|Objecten:identificatie|#text', keep="last")))
 	# df = pdx.flatten(df)
 	# print("test")
