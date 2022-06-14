@@ -68,9 +68,13 @@ for i in range(10):
     test_frame = test_frame.drop(columns=["date"])
     
     training_labels = np.asarray(training_frame['target'])
+    training_labels = training_labels.astype('int')
     training_features = np.asarray(training_frame.drop(columns=['target']))
+    training_features = training_features.astype('float')
     test_labels = np.asarray(test_frame['target'])
+    test_labels = test_labels.astype('int')
     test_features = np.asarray(test_frame.drop(columns=['target']))
+    test_features = test_features.astype('float')
     
     feature_list = list(training_frame.drop(columns=['target']).columns)
     print(feature_list)    
