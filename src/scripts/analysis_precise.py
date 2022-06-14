@@ -59,7 +59,7 @@ df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
 number_rows = len(rain_p2000.index)
-print(len(number_rows))
+print(number_rows)
 number_per_frame = int(number_rows/10)
 
 for i in range(10):
