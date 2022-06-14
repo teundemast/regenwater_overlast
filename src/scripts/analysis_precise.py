@@ -63,7 +63,7 @@ print(number_rows)
 number_per_frame = int(number_rows/10)
 
 for i in range(10):
-    path = f"src/testframes/frame_{i}.csv"
+    path = f"src/test_frames/frame_{i}.csv"
     if i == 9:
         test_frame = rain_p2000
     else:
