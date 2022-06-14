@@ -2,18 +2,13 @@ import pandas as pd
 import numpy as np 
 import sys
 import os
-from numpy import savetxt
-import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
-from sklearn import tree
 from sklearn.metrics import classification_report, confusion_matrix, precision_score, recall_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.model_selection import cross_val_score
 from sklearn import metrics
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
-import pandas as pd
-import numpy as np
 
 df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/precise.pkl").reset_index()
 is_dslab = os.getenv('DS_LAB', None)
@@ -56,22 +51,9 @@ concat_df = pd.concat(listofarr)
 df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
-number_rows = len(rain_p2000.index)
-print(number_rows)
-number_per_frame = int(number_rows/10)
-
 for i in range(10):
-    path = f"src/test_frames/frame_{i}.csv"
-    if i == 9:
-        test_frame = rain_p2000
-    else:
-        test_frame = rain_p2000.sample(number_per_frame)
-    test_frame.to_csv(path)
-    rain_p2000 = rain_p2000.drop(test_frame.index)
-    
-    
-
-
+    test_frame = pd.read_csv(f"src/test_frames/frame_{i}.csv", index_col=0)
+    print(test_frame)
 
 # resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
 # resultFile = open (resultFolder +"resultpreciserain.txt", "w+") 
