@@ -72,7 +72,7 @@ for i in range(10):
     test_labels = np.asarray(test_frame['target'])
     test_features = np.asarray(test_frame.drop(columns=['target']))
     
-    feature_list = list(training_features.columns)
+    feature_list = list(training_frame.drop(columns=['target']).columns)
     print(feature_list)    
     
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
