@@ -76,6 +76,7 @@ for i in range(10):
     print(feature_list)    
     
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
+    print(training_labels)
     rf.fit(training_features, training_labels)
     
     label_prediction = rf.predict(test_features)  
