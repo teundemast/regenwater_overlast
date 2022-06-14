@@ -98,7 +98,6 @@ count = 0
 btime = time.time()
 df1 = df1.sort_values(by=['date'])
 df1['past3hours'] = df1.apply(get_precipitation_data, axis=1)
-df1 = df1.drop(columns = ["date"])
 
 # Step 4: Filter out water damage notifications which are not caused by rain 
 df1 = df1[(df1.past3hours > rain_treshold)]
@@ -143,13 +142,14 @@ df1['layers'] = df1.apply(add_layers, axis=1)
 df1 = df1.drop(columns=['lat','lng'])
 
 # Step 6: Add negative examples
-data0 = {'target': [], 'past3hours': [], 'layers': []}
+data0 = {'target': [], 'past3hours': [], 'layers': [], "date":[]}
 
 def sample_dependent(data):
     data0['target'].append(0)
     max_rain = data["past3hours"]
     data0["past3hours"].append(random.randint(rain_treshold, max_rain))
     data0["layers"].append(data["layers"])
+    data0["date"].append(data["date"])
 
 df1.apply(sample_dependent, axis=1)
 df0 = pd.DataFrame(data0)
@@ -157,8 +157,6 @@ df0 = pd.DataFrame(data0)
 df = pd.concat([df0, df1], ignore_index=True)
 
 # Step 7: Output dataframe as pkl to keep the size of the file small 
-
-
 print(df)
 df.to_pickle(dir_ + output_file, protocol=4)
 
