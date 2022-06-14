@@ -58,35 +58,51 @@ concat_df = pd.concat(listofarr)
 df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
+number_rows = len(rain_p2000.index)
+print(len(number_rows))
+number_per_frame = int(number_rows/10)
 
-resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
-resultFile = open (resultFolder +"resultpreciserain.txt", "w+") 
+for i in range(10):
+    path = f"src/testframes/frame_{i}.csv"
+    if i == 9:
+        test_frame = rain_p2000
+    else:
+        test_frame = rain_p2000.sample(number_per_frame)
+    test_frame.to_csv(path)
+    rain_p2000 = rain_p2000.drop(test_frame.index)
     
-labels = np.asarray(rain_p2000['target'])
+    
+
+
+
+# resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
+# resultFile = open (resultFolder +"resultpreciserain.txt", "w+") 
+    
+# labels = np.asarray(rain_p2000['target'])
    
-features = rain_p2000.drop(columns=['target'])
+# features = rain_p2000.drop(columns=['target'])
     
 # # Saving feature names for later use
 # feature_list = list(features.columns)
 # print(feature_list)    
-features_with_date = np.asarray(features)
-features_used = np.delete(features_with_date, 1, 1)
-print(features_used)
-# print(labels.shape)
-# #k-fold cross validation
-skf = StratifiedKFold(n_splits=10)
-# treeNumber = 0
+# features_with_date = np.asarray(features)
+# features_used = np.delete(features_with_date, 1, 1)
+# print(features_used)
+# # print(labels.shape)
+# # #k-fold cross validation
+# skf = StratifiedKFold(n_splits=10)
 # accuracyResult = []
 # precisionResult = []
 # recallResult = []
 # totalConfusion = [[0,0],[0,0]]
 # labels = label_encoder.fit_transform(labels)
 # n = 0
-# for train_index, test_index in skf.split(features,labels):
+# for train_index, test_index in skf.split(features_with_date,labels):
 #     print("Train: ", train_index, " Test: ", test_index)
-#     train_features, test_features = features[train_index], features[test_index]
-#     train_labels, test_labels = labels[train_index], labels[test_index]
+#     train_features, test_features = features_with_date[train_index], features_with_date[test_index]
     
+#     train_labels, test_labels = labels[train_index], labels[test_index]
+#     test_feature
 #     n += 1
 #     print(len(train_index))
      
