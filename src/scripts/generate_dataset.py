@@ -13,7 +13,7 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 strfformat_ensurance = "%d/%m/%Y"
 
 # File names
-input_file = "src/data/postcode4_number1.json"
+input_file = "src/data/postcode4/postcode4_number1.json"
 output_file = 'src/pkls/postcode4/number1.pkl'
 
 # Time variables 
