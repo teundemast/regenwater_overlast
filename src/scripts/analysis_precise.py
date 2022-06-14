@@ -57,8 +57,9 @@ concat_df = pd.concat(listofarr)
 
 df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
-rain_p2000= df.drop(columns=['level_0', 'indexl'])
+rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
 print(rain_p2000)
+print(rain_p2000.columns)
 # resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
 # resultFile = open (resultFolder +"resultpreciserain.txt", "w+")
 #      #load data
