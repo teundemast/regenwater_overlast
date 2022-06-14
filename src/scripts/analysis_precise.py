@@ -4,7 +4,6 @@ import sys
 import os
 from numpy import savetxt
 import matplotlib.pyplot as plt
-#sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import tree
 from sklearn.metrics import classification_report, confusion_matrix, precision_score, recall_score
@@ -13,7 +12,6 @@ from sklearn.model_selection import cross_val_score
 from sklearn import metrics
 from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
-# from autosklearn.experimental.askl2 import AutoSklearn2Classifier
 import pandas as pd
 import numpy as np
 
