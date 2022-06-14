@@ -49,16 +49,16 @@ def reshape(arr):
         arr = arr.join(dfArr, lsuffix="l")
         listofarr.append(arr)
 
-#df[column] = df.apply(normalize, axis=1)
-#df[column] = df.apply(reshape, axis=1)
+df[column] = df.apply(normalize, axis=1)
+df[column] = df.apply(reshape, axis=1)
 
 
-#concat_df = pd.concat(listofarr)
-#print(concat_df) 
+concat_df = pd.concat(listofarr)
+print(concat_df) 
 
-#df = concat_df.dropna(axis="columns", how="all")
-#df = df.dropna(thresh=10)
-#df = df.reset_index(drop=True)
+df = concat_df.dropna(axis="columns", how="all")
+df = df.dropna(thresh=10)
+df = df.reset_index(drop=True)
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
 resultFile = open (resultFolder +"resultpreciserain.txt", "w+")
@@ -68,7 +68,7 @@ print("data loaded")
 print(rain_p2000)
 
 
-rain_p2000= rain_p2000.drop(columns=['lat', 'lng','index', 'date', "layers"])
+rain_p2000= rain_p2000.drop(columns=['lat', 'lng','index', 'date'])
     
 
 rain_p2000 = rain_p2000.dropna()
@@ -90,25 +90,19 @@ precisionResult = []
 recallResult = []
 totalConfusion = [[0,0],[0,0]]
 labels = label_encoder.fit_transform(labels)
+n = 0
 for train_index, test_index in skf.split(features,labels):
     print("Train: ", train_index, " Test: ", test_index)
     train_features, test_features = features[train_index], features[test_index]
     train_labels, test_labels = labels[train_index], labels[test_index]
-
+    
+    n += 1
+    print(len(train_index))
      
-#         #train and test the decision tree
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)        
-#         rf = AutoSklearn2Classifier(time_left_for_this_task=240*60, per_run_time_limit=7*60)
     rf.fit(train_features, train_labels)
     label_prediction = rf.predict(test_features)
 
-    
-    
-    
-#         #output performance subtree
-#         #errors = abs(label_prediction - test_labels)
-#         #print('Mean Absolute Error:', round(np.mean(errors), 2))
-#         # Pull out one tree from the forest
     confusion = confusion_matrix(test_labels,label_prediction)
     totalConfusion[0][0] += confusion[0][0]
     totalConfusion[0][1] += confusion[0][1]
@@ -124,35 +118,12 @@ for train_index, test_index in skf.split(features,labels):
     resultFile.write("Accuracy: "+str(metrics.accuracy_score(test_labels, label_prediction))+"\n")
     resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
     resultFile.write("Recall: "+str(recall_score(test_labels, label_prediction)) + "\n\n")
-        
-#         # tree = rf.estimators_[4]# Import tools needed for visualization
-#         # from sklearn.tree import export_graphviz
-#         # import pydot# Pull out one tree from the forest
-#         # tree = rf.estimators_[5]# Export the image to a dot file
-#         # outputFile = resultFolder+"tree"+str(treeNumber)+".dot"
-#         # export_graphviz(tree, out_file = outputFile, feature_names = feature_list, rounded = True, precision = 1)# Use dot file to create a graph
-#         # #(graph, ) = pydot.graph_from_dot_file('tree.dot')# Write graph to a png file
-#         # #graph.write_png('tree.png')
-#         treeNumber+=1
-        
-#     #output cross validation performance
-#     #all_accuracies = cross_val_score(estimator=rf, X=features, y=labels, cv=10)
-
-#     fig, ax = plt.subplots()
-#     data = [accuracyResult, precisionResult, recallResult]
-#     xlabels = ["Accuracy", "Precision", "Recall"]
-#     ax.boxplot(data)
-#     ax.set_xticklabels(xlabels)
-#     ax.set_ylim(0,1)
 
 resultFile.write("\nAverage accuracy: "+str(np.average(accuracyResult))+"\n")
 resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
 resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
 resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
 resultFile.close()
-#     #print(cross_val_score(estimator=rf, X=features, y=labels, cv=skf, scoring="accuracy"))
-#     plt.savefig(resultFolder+"boxplotMeasures.png")
-#     plt.show()
    
 # if __name__ == '__main__':
 #     randomForest()

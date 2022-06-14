@@ -13,8 +13,9 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 strfformat_ensurance = "%d/%m/%Y"
 
 # File names
-input_file = "src/data/postcode4/postcode4_number1.json"
-output_file = 'src/pkls/postcode4/number1.pkl'
+dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
+input_file = "postcode4/postcode4_number1.json"
+output_file = 'pkls/postcode4/number1.pkl'
 
 # Time variables 
 total = 0
@@ -82,7 +83,7 @@ def get_past3hours(date, lat, lon):
     
 
 # Step 1: Loading file and assigning target value 
-df1 = pd.read_json(input_file)
+df1 = pd.read_json(dir_ + input_file)
 df1 = df1.dropna()
 df1['target'] = 1
 
@@ -156,8 +157,7 @@ df0 = pd.DataFrame(data0)
 df = pd.concat([df0, df1], ignore_index=True)
 
 # Step 7: Output dataframe as pkl to keep the size of the file small 
-dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-dir_ = 'src/data/'
+
 
 print(df)
 df.to_pickle(dir_ + output_file, protocol=4)
