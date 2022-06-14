@@ -11,7 +11,8 @@ from sklearn.preprocessing import LabelEncoder
 label_encoder = LabelEncoder()
 
 df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/precise.pkl").reset_index()
-is_dslab = os.getenv('DS_LAB', None)
+resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
+resultFile = open (resultFolder +"result_precise_rain_height.txt", "w+") 
 df = df.dropna()
 
 # if only rain 
@@ -52,14 +53,52 @@ df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
 
+accuracyResult = []
+precisionResult = []
+recallResult = []
+totalConfusion = [[0,0],[0,0]]
 for i in range(10):
     test_frame = pd.read_csv(f"src/test_frames/frame_{i}.csv", index_col=0)
     dates_test_frame = test_frame["date"].tolist()
     training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
-    print(training_frame)
-
-# resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
-# resultFile = open (resultFolder +"resultpreciserain.txt", "w+") 
+    
+    training_frame = training_frame.sample(1700)
+    
+    training_frame = training_frame.drop(columns=["date"])
+    test_frame = test_frame.drop(columns=["date"])
+    
+    training_labels = np.asarray(training_frame['target'])
+    training_features = np.asarray(training_frame.drop(columns=['target']))
+    test_labels = np.asarray(test_frame['target'])
+    test_features = np.asarray(test_frame.drop(columns=['target']))
+    
+    feature_list = list(training_features.columns)
+    print(feature_list)    
+    
+    rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
+    rf.fit(training_features, training_labels)
+    
+    label_prediction = rf.predict(test_features)  
+    confusion = confusion_matrix(test_labels,label_prediction)
+    totalConfusion[0][0] += confusion[0][0]
+    totalConfusion[0][1] += confusion[0][1]
+    totalConfusion[1][0] += confusion[1][0]
+    totalConfusion[1][1] += confusion[1][1]
+    
+    accuracyResult.append(metrics.accuracy_score(test_labels, label_prediction))
+    precisionResult.append(precision_score(test_labels, label_prediction))
+    recallResult.append(recall_score(test_labels, label_prediction))
+    
+    resultFile.write("Fold "+str(i)+"\n")
+    resultFile.write(str(confusion)+'\n')
+    resultFile.write("Accuracy: "+str(metrics.accuracy_score(test_labels, label_prediction))+"\n")
+    resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
+    resultFile.write("Recall: "+str(recall_score(test_labels, label_prediction)) + "\n\n")
+resultFile.write("\nAverage accuracy: "+str(np.average(accuracyResult))+"\n")
+resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
+resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
+resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
+resultFile.close()
     
 # labels = np.asarray(rain_p2000['target'])
    
