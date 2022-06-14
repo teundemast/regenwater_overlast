@@ -14,8 +14,8 @@ strfformat_ensurance = "%d/%m/%Y"
 
 # File names
 dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-input_file = "postcode4/postcode4_number2.json"
-output_file = 'pkls/postcode4/postcode4_number2.pkl'
+input_file = "merged_precise_coord_transformed.json"
+output_file = 'pkls/precise2.pkl'
 
 # Time variables
 total = 0
