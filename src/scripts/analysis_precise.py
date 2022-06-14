@@ -58,26 +58,22 @@ concat_df = pd.concat(listofarr)
 df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
-print(rain_p2000)
-print(rain_p2000.columns)
-# resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
-# resultFile = open (resultFolder +"resultpreciserain.txt", "w+")
-#      #load data
-# rain_p2000 = df 
-# print("data loaded")
-# print(rain_p2000)    
+
+resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
+resultFile = open (resultFolder +"resultpreciserain.txt", "w+") 
     
-# labels = np.asarray(rain_p2000['target'])
+labels = np.asarray(rain_p2000['target'])
    
-# features = rain_p2000.drop(columns=['target'])
+features = rain_p2000.drop(columns=['target'])
     
 # # Saving feature names for later use
 # feature_list = list(features.columns)
 # print(feature_list)    
-# features = np.asarray(features)
+features = np.asarray(features)
+print(features)
 # print(labels.shape)
 # #k-fold cross validation
-# skf = StratifiedKFold(n_splits=10)
+skf = StratifiedKFold(n_splits=10)
 # treeNumber = 0
 # accuracyResult = []
 # precisionResult = []
