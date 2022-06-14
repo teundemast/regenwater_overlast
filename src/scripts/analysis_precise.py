@@ -21,6 +21,7 @@ df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/
 is_dslab = os.getenv('DS_LAB', None)
 df = df.dropna()
 
+# if only rain 
 # dict = {
 #     "rain" : [],
 #     "target": []
@@ -52,27 +53,18 @@ def reshape(arr):
 df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
-
 concat_df = pd.concat(listofarr)
-# print(concat_df) 
 
 df = concat_df.dropna(axis="columns", how="all")
-df = df.dropna(thresh=10)
 df = df.reset_index(drop=True)
-print(df)
-
+rain_p2000= df.drop(columns=['level_0', 'indexl'])
+print(rain_p2000)
 # resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
 # resultFile = open (resultFolder +"resultpreciserain.txt", "w+")
 #      #load data
 # rain_p2000 = df 
 # print("data loaded")
-# print(rain_p2000)
-
-
-# rain_p2000= rain_p2000.drop(columns=['lat', 'lng','index', 'date'])
-    
-
-# rain_p2000 = rain_p2000.dropna()
+# print(rain_p2000)    
     
 # labels = np.asarray(rain_p2000['target'])
    
