@@ -17,7 +17,7 @@ label_encoder = LabelEncoder()
 import pandas as pd
 import numpy as np
 
-df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset_d5.pkl").reset_index()
+df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/dataset_precise.pkl").reset_index()
 is_dslab = os.getenv('DS_LAB', None)
 df = df.dropna()
 
@@ -49,27 +49,26 @@ def reshape(arr):
         arr = arr.join(dfArr, lsuffix="l")
         listofarr.append(arr)
 
-df[column] = df.apply(normalize, axis=1)
-df[column] = df.apply(reshape, axis=1)
+#df[column] = df.apply(normalize, axis=1)
+#df[column] = df.apply(reshape, axis=1)
 
 
-concat_df = pd.concat(listofarr)
-print(concat_df) 
+#concat_df = pd.concat(listofarr)
+#print(concat_df) 
 
-df = concat_df.dropna(axis="columns", how="all")
-df = df.dropna(thresh=10)
-df = df.reset_index(drop=True)
-print(df.head())
+#df = concat_df.dropna(axis="columns", how="all")
+#df = df.dropna(thresh=10)
+#df = df.reset_index(drop=True)
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/src/" 
-resultFile = open (resultFolder +"result400par.txt", "w+")
+resultFile = open (resultFolder +"resultpreciserain.txt", "w+")
      #load data
 rain_p2000 = df 
 print("data loaded")
+print(rain_p2000)
 
 
-
-rain_p2000= rain_p2000.drop(columns=['lat', 'lng','index', 'indexl','level_0', 'date'])
+rain_p2000= rain_p2000.drop(columns=['lat', 'lng','index', 'date', "layers"])
     
 
 rain_p2000 = rain_p2000.dropna()
@@ -80,7 +79,7 @@ features = rain_p2000.drop(columns=['target'])
     
 # Saving feature names for later use
 feature_list = list(features.columns)
-    
+print(feature_list)    
 features = np.asarray(features)
 print(labels.shape)
 #k-fold cross validation
@@ -96,7 +95,7 @@ for train_index, test_index in skf.split(features,labels):
     train_features, test_features = features[train_index], features[test_index]
     train_labels, test_labels = labels[train_index], labels[test_index]
 
-    print(test_features[0]) 
+     
 #         #train and test the decision tree
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)        
 #         rf = AutoSklearn2Classifier(time_left_for_this_task=240*60, per_run_time_limit=7*60)
