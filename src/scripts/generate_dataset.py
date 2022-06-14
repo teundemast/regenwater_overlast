@@ -13,8 +13,8 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 strfformat_ensurance = "%d/%m/%Y"
 
 # File names
-input_file = "src/data/merged_precise_coord_transformed.json"
-output_file = 'precise.pkl'
+input_file = "src/data/postcode4_number1.json"
+output_file = 'src/pkls/postcode4/number1.pkl'
 
 # Time variables 
 total = 0
