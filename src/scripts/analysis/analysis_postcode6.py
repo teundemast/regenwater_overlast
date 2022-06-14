@@ -1,17 +1,8 @@
 import pandas as pd 
 import numpy as np 
-import sys
-import os
-from numpy import savetxt
-import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
-from sklearn import tree
-from sklearn.metrics import classification_report, confusion_matrix, precision_score, recall_score
-from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import cross_val_score
+from sklearn.metrics import  confusion_matrix, precision_score, recall_score
 from sklearn import metrics
-from sklearn.preprocessing import LabelEncoder
-label_encoder = LabelEncoder()
 import pandas as pd
 import numpy as np
 df = pd.read_pickle("/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/postcode6/postcode6_number1.pkl").reset_index()
