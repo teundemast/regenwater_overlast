@@ -55,7 +55,7 @@ rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
 for i in range(10):
     test_frame = pd.read_csv(f"src/test_frames/frame_{i}.csv", index_col=0)
     dates_test_frame = test_frame["date"].tolist()
-    rain_p2000 = rain_p2000[rain_p2000["date"] not in dates_test_frame]
+    rain_p2000 = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
     print(rain_p2000)
 
 # resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/" 
