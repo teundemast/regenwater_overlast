@@ -1,0 +1,357 @@
+Fold postcode4_number1.pkl
+[[46 59]
+ [52 64]]
+Accuracy: 0.497737556561086
+Precision: 0.5203252032520326
+Recall: 0.5517241379310345
+
+Fold postcode4_number1.pkl
+[[57 51]
+ [67 46]]
+Accuracy: 0.4660633484162896
+Precision: 0.4742268041237113
+Recall: 0.40707964601769914
+
+Fold postcode4_number1.pkl
+[[53 48]
+ [62 53]]
+Accuracy: 0.49074074074074076
+Precision: 0.5247524752475248
+Recall: 0.4608695652173913
+
+Fold postcode4_number1.pkl
+[[36 67]
+ [47 71]]
+Accuracy: 0.4841628959276018
+Precision: 0.5144927536231884
+Recall: 0.6016949152542372
+
+Fold postcode4_number1.pkl
+[[59 50]
+ [50 62]]
+Accuracy: 0.5475113122171946
+Precision: 0.5535714285714286
+Recall: 0.5535714285714286
+
+Fold postcode4_number1.pkl
+[[58 63]
+ [51 57]]
+Accuracy: 0.5021834061135371
+Precision: 0.475
+Recall: 0.5277777777777778
+
+Fold postcode4_number1.pkl
+[[59 52]
+ [43 67]]
+Accuracy: 0.5701357466063348
+Precision: 0.5630252100840336
+Recall: 0.6090909090909091
+
+Fold postcode4_number1.pkl
+[[51 51]
+ [64 50]]
+Accuracy: 0.4675925925925926
+Precision: 0.49504950495049505
+Recall: 0.43859649122807015
+
+Fold postcode4_number1.pkl
+[[52 72]
+ [40 57]]
+Accuracy: 0.49321266968325794
+Precision: 0.4418604651162791
+Recall: 0.5876288659793815
+
+Fold postcode4_number1.pkl
+[[57 61]
+ [39 59]]
+Accuracy: 0.5370370370370371
+Precision: 0.49166666666666664
+Recall: 0.6020408163265306
+
+Fold postcode4_number2.pkl
+[[57 55]
+ [56 53]]
+Accuracy: 0.497737556561086
+Precision: 0.49074074074074076
+Recall: 0.48623853211009177
+
+Fold postcode4_number2.pkl
+[[77 41]
+ [72 39]]
+Accuracy: 0.5065502183406113
+Precision: 0.4875
+Recall: 0.35135135135135137
+
+Fold postcode4_number2.pkl
+[[60 48]
+ [51 57]]
+Accuracy: 0.5416666666666666
+Precision: 0.5428571428571428
+Recall: 0.5277777777777778
+
+Fold postcode4_number2.pkl
+[[68 44]
+ [71 38]]
+Accuracy: 0.4796380090497738
+Precision: 0.4634146341463415
+Recall: 0.3486238532110092
+
+Fold postcode4_number2.pkl
+[[64 52]
+ [55 50]]
+Accuracy: 0.5158371040723982
+Precision: 0.49019607843137253
+Recall: 0.47619047619047616
+
+Fold postcode4_number2.pkl
+[[49 60]
+ [48 64]]
+Accuracy: 0.5113122171945701
+Precision: 0.5161290322580645
+Recall: 0.5714285714285714
+
+Fold postcode4_number2.pkl
+[[59 44]
+ [55 63]]
+Accuracy: 0.5520361990950227
+Precision: 0.5887850467289719
+Recall: 0.5338983050847458
+
+Fold postcode4_number2.pkl
+[[40 71]
+ [40 70]]
+Accuracy: 0.497737556561086
+Precision: 0.49645390070921985
+Recall: 0.6363636363636364
+
+Fold postcode4_number2.pkl
+[[50 57]
+ [64 50]]
+Accuracy: 0.45248868778280543
+Precision: 0.4672897196261682
+Recall: 0.43859649122807015
+
+Fold postcode4_number2.pkl
+[[64 57]
+ [63 45]]
+Accuracy: 0.4759825327510917
+Precision: 0.4411764705882353
+Recall: 0.4166666666666667
+
+Fold postcode4_number3.pkl
+[[68 40]
+ [55 58]]
+Accuracy: 0.5701357466063348
+Precision: 0.5918367346938775
+Recall: 0.5132743362831859
+
+Fold postcode4_number3.pkl
+[[56 52]
+ [55 53]]
+Accuracy: 0.5046296296296297
+Precision: 0.5047619047619047
+Recall: 0.49074074074074076
+
+Fold postcode4_number3.pkl
+[[57 46]
+ [58 60]]
+Accuracy: 0.5294117647058824
+Precision: 0.5660377358490566
+Recall: 0.5084745762711864
+
+Fold postcode4_number3.pkl
+[[56 56]
+ [59 50]]
+Accuracy: 0.4796380090497738
+Precision: 0.4716981132075472
+Recall: 0.45871559633027525
+
+Fold postcode4_number3.pkl
+[[65 50]
+ [63 38]]
+Accuracy: 0.47685185185185186
+Precision: 0.4318181818181818
+Recall: 0.37623762376237624
+
+Fold postcode4_number3.pkl
+[[56 62]
+ [43 55]]
+Accuracy: 0.5138888888888888
+Precision: 0.4700854700854701
+Recall: 0.5612244897959183
+
+Fold postcode4_number3.pkl
+[[72 43]
+ [61 40]]
+Accuracy: 0.5185185185185185
+Precision: 0.4819277108433735
+Recall: 0.39603960396039606
+
+Fold postcode4_number3.pkl
+[[47 49]
+ [69 56]]
+Accuracy: 0.4660633484162896
+Precision: 0.5333333333333333
+Recall: 0.448
+
+Fold postcode4_number3.pkl
+[[43 75]
+ [45 58]]
+Accuracy: 0.45701357466063347
+Precision: 0.43609022556390975
+Recall: 0.5631067961165048
+
+Fold postcode4_number3.pkl
+[[62 46]
+ [68 44]]
+Accuracy: 0.4818181818181818
+Precision: 0.4888888888888889
+Recall: 0.39285714285714285
+
+Fold postcode4_number4.pkl
+[[60 55]
+ [51 50]]
+Accuracy: 0.5092592592592593
+Precision: 0.47619047619047616
+Recall: 0.49504950495049505
+
+Fold postcode4_number4.pkl
+[[55 58]
+ [49 59]]
+Accuracy: 0.5158371040723982
+Precision: 0.5042735042735043
+Recall: 0.5462962962962963
+
+Fold postcode4_number4.pkl
+[[40 63]
+ [61 57]]
+Accuracy: 0.43891402714932126
+Precision: 0.475
+Recall: 0.4830508474576271
+
+Fold postcode4_number4.pkl
+[[77 42]
+ [52 50]]
+Accuracy: 0.5746606334841629
+Precision: 0.5434782608695652
+Recall: 0.49019607843137253
+
+Fold postcode4_number4.pkl
+[[54 54]
+ [54 59]]
+Accuracy: 0.5113122171945701
+Precision: 0.5221238938053098
+Recall: 0.5221238938053098
+
+Fold postcode4_number4.pkl
+[[57 55]
+ [60 49]]
+Accuracy: 0.4796380090497738
+Precision: 0.47115384615384615
+Recall: 0.44954128440366975
+
+Fold postcode4_number4.pkl
+[[47 69]
+ [46 59]]
+Accuracy: 0.4796380090497738
+Precision: 0.4609375
+Recall: 0.5619047619047619
+
+Fold postcode4_number4.pkl
+[[53 60]
+ [47 61]]
+Accuracy: 0.5158371040723982
+Precision: 0.5041322314049587
+Recall: 0.5648148148148148
+
+Fold postcode4_number4.pkl
+[[35 66]
+ [41 74]]
+Accuracy: 0.5046296296296297
+Precision: 0.5285714285714286
+Recall: 0.6434782608695652
+
+Fold postcode4_number4.pkl
+[[63 50]
+ [64 44]]
+Accuracy: 0.4841628959276018
+Precision: 0.46808510638297873
+Recall: 0.4074074074074074
+
+Fold postcode4_number5.pkl
+[[58 57]
+ [52 54]]
+Accuracy: 0.5067873303167421
+Precision: 0.4864864864864865
+Recall: 0.5094339622641509
+
+Fold postcode4_number5.pkl
+[[56 62]
+ [37 74]]
+Accuracy: 0.5676855895196506
+Precision: 0.5441176470588235
+Recall: 0.6666666666666666
+
+Fold postcode4_number5.pkl
+[[54 57]
+ [49 61]]
+Accuracy: 0.5203619909502263
+Precision: 0.5169491525423728
+Recall: 0.5545454545454546
+
+Fold postcode4_number5.pkl
+[[47 66]
+ [50 58]]
+Accuracy: 0.4751131221719457
+Precision: 0.46774193548387094
+Recall: 0.5370370370370371
+
+Fold postcode4_number5.pkl
+[[49 52]
+ [65 50]]
+Accuracy: 0.4583333333333333
+Precision: 0.49019607843137253
+Recall: 0.43478260869565216
+
+Fold postcode4_number5.pkl
+[[64 37]
+ [75 40]]
+Accuracy: 0.48148148148148145
+Precision: 0.5194805194805194
+Recall: 0.34782608695652173
+
+Fold postcode4_number5.pkl
+[[42 65]
+ [51 63]]
+Accuracy: 0.4751131221719457
+Precision: 0.4921875
+Recall: 0.5526315789473685
+
+Fold postcode4_number5.pkl
+[[45 63]
+ [57 56]]
+Accuracy: 0.45701357466063347
+Precision: 0.47058823529411764
+Recall: 0.49557522123893805
+
+Fold postcode4_number5.pkl
+[[48 60]
+ [54 59]]
+Accuracy: 0.4841628959276018
+Precision: 0.4957983193277311
+Recall: 0.5221238938053098
+
+Fold postcode4_number5.pkl
+[[57 58]
+ [48 53]]
+Accuracy: 0.5092592592592593
+Precision: 0.4774774774774775
+Recall: 0.5247524752475248
+
+
+Average accuracy: 0.5006906831359695
+Average precision: 0.49859922352004005
+Average recall: 0.5029023851334106
+Total Confusion matrix: 
+[2759,2771] 
+[2729,2757] 
