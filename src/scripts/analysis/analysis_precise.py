@@ -50,7 +50,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         # df = df.reset_index(drop=True)
         # rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
         # Only rain: 
-        rain_p2000 = df[["past3hours", "date"]]
+        rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
         all_files = []
         files = os.listdir(directory)
@@ -60,7 +60,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         for filename in ten_random_files:
                 test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
                 # Only rain: 
-                test_frame = test_frame[["past3hours", "date"]]
+                test_frame = test_frame[["past3hours", "date", "target"]]
                 # print(test_frame)
                 dates_test_frame = test_frame["date"].tolist()
                 print(len(rain_p2000.index))
