@@ -81,7 +81,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
                 test_features = test_features.astype('float')
 
                 feature_list = list(training_frame.drop(columns=['target']).columns)
-                # print(feature_list)    
+                print(feature_list)    
 
                 rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
                 # print(training_labels)
