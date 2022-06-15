@@ -51,7 +51,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         df = df.reset_index(drop=True)
         # print(df)
         rain_p2000= df.drop(columns=['indexl', 'index'])
-        print(rain_p2000)
+        # print(rain_p2000)
         # Only rain: 
         # rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
@@ -87,7 +87,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
                 test_features = test_features.astype('float')
 
                 feature_list = list(training_frame.drop(columns=['target']).columns)
-                print(feature_list)    
+                # print(feature_list)    
 
                 rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
                 # print(training_labels)
