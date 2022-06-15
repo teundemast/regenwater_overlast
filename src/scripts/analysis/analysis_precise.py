@@ -101,8 +101,8 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
                 resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
                 resultFile.write("Recall: "+str(recall_score(test_labels, label_prediction)) + "\n\n")
 resultFile.write("\nAverage accuracy: "+str(np.average(accuracyResult))+"\n")
-resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
-resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
+resultFile.write("Average precision: "+str(np.average(precisionResult))+"\n")
+resultFile.write("Average recall: "+ str(np.average(recallResult))+"\n")
 resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
 resultFile.close()
 
