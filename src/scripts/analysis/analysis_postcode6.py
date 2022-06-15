@@ -38,18 +38,19 @@ for path in ["postcode6_number1.pkl", "postcode6_number2.pkl", "postcode6_number
         print("Nu bezig met: " + path)
         df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/postcode6/{path}").reset_index()
         df = df.dropna()
-        # listofarr = []
-        # column = "layers"
+        df = df[["date", "target", "layers"]]
+        listofarr = []
+        column = "layers"
 
-        # df[column] = df.apply(normalize, axis=1)
-        # df[column] = df.apply(reshape, axis=1)
+        df[column] = df.apply(normalize, axis=1)
+        df[column] = df.apply(reshape, axis=1)
         
-        # concat_df = pd.concat(listofarr)
+        concat_df = pd.concat(listofarr)
 
-        # df = concat_df.dropna(axis="columns", how="all")
-        # df = df.reset_index(drop=True)
-        # rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
-        rain_p2000 = df[["past3hours", "date", "target"]]
+        df = concat_df.dropna(axis="columns", how="all")
+        df = df.reset_index(drop=True)
+        rain_p2000= df.drop(columns=['indexl', 'index'])
+        # rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
         all_files = []
         files = os.listdir(directory)
@@ -58,7 +59,9 @@ for path in ["postcode6_number1.pkl", "postcode6_number2.pkl", "postcode6_number
         ten_random_files = random.sample(all_files, 10)
         for filename in ten_random_files:
                 test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
-                test_frame = test_frame[["past3hours", "date", "target"]]
+                # test_frame = test_frame[["past3hours", "date", "target"]]
+                list_399 = [str(x) for x in list(range(400))]
+                test_frame = test_frame[list_399 + ['date', 'target']]
                 # print(test_frame)
                 dates_test_frame = test_frame["date"].tolist()
                 print(len(rain_p2000.index))
