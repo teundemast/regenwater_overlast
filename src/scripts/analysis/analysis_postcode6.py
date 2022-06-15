@@ -7,28 +7,28 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_postcode6_rain_all.txt", "w+") 
+resultFile = open (resultFolder +"result_postcode6_height_all.txt", "w+") 
 
-# def normalize(row):
-#         height = row[column]
-#         nans = height > 1000
-#         height[nans] = np.nan
-#         height = (height-np.nanmean(height))/np.nanstd(height)
-#         height[np.isnan(height)] = 3
-#         return height
+def normalize(row):
+        height = row[column]
+        nans = height > 1000
+        height[nans] = np.nan
+        height = (height-np.nanmean(height))/np.nanstd(height)
+        height[np.isnan(height)] = 3
+        return height
 
-# def reshape(arr):
-#         result = np.reshape(arr[column], (20,20))
-#         result = result.flatten()
-#         dfArr = pd.DataFrame(result)
-#         dfArr = dfArr.transpose()
-#         arr = arr.to_frame()
-#         arr = arr.drop("layers")
-#         arr = arr.transpose()
-#         arr = arr.reset_index()
-#         dfArr = dfArr.reset_index()
-#         arr = arr.join(dfArr, lsuffix="l")
-#         listofarr.append(arr)
+def reshape(arr):
+        result = np.reshape(arr[column], (20,20))
+        result = result.flatten()
+        dfArr = pd.DataFrame(result)
+        dfArr = dfArr.transpose()
+        arr = arr.to_frame()
+        arr = arr.drop("layers")
+        arr = arr.transpose()
+        arr = arr.reset_index()
+        dfArr = dfArr.reset_index()
+        arr = arr.join(dfArr, lsuffix="l")
+        listofarr.append(arr)
         
 accuracyResult = []
 precisionResult = []

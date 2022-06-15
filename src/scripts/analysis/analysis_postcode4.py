@@ -49,6 +49,7 @@ for path in ["postcode4_number1.pkl", "postcode4_number2.pkl", "postcode4_number
         df = concat_df.dropna(axis="columns", how="all")
         df = df.reset_index(drop=True)
         rain_p2000= df.drop(columns=['indexl', 'index'])
+        print(rain_p2000)
         # rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
         all_files = []
@@ -61,6 +62,7 @@ for path in ["postcode4_number1.pkl", "postcode4_number2.pkl", "postcode4_number
                 # test_frame = test_frame[["past3hours", "date", "target"]]
                 list_399 = [str(x) for x in list(range(400))]
                 test_frame = test_frame[list_399 + ['date', 'target']]
+                print(test_frame)
                 # print(test_frame)
                 dates_test_frame = test_frame["date"].tolist()
                 print(len(rain_p2000.index))
