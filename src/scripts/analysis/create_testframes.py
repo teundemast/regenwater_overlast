@@ -5,6 +5,7 @@ import os
 n = 0
 for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , "precise.pkl"]:
     n = 0
+    n += 1
     df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
     df = df.dropna()
 
