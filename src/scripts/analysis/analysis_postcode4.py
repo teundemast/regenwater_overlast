@@ -36,7 +36,7 @@ recallResult = []
 totalConfusion = [[0,0],[0,0]]   
 for path in ["postcode4_number1.pkl", "postcode4_number2.pkl", "postcode4_number3.pkl", "postcode4_number4.pkl", "postcode4_number5.pkl"]:
         print("Nu bezig met: " + path)
-        df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/postcode6/{path}").reset_index()
+        df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/postcode4/{path}").reset_index()
         df = df.dropna()
         listofarr = []
         column = "layers"
