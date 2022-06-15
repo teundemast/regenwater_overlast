@@ -7,28 +7,28 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_precise_rain_all.txt", "w+") 
+resultFile = open (resultFolder +"result_precise_height_all.txt", "w+") 
 
-# def normalize(row):
-#         height = row[column]
-#         nans = height > 1000
-#         height[nans] = np.nan
-#         height = (height-np.nanmean(height))/np.nanstd(height)
-#         height[np.isnan(height)] = 3
-#         return height
+def normalize(row):
+        height = row[column]
+        nans = height > 1000
+        height[nans] = np.nan
+        height = (height-np.nanmean(height))/np.nanstd(height)
+        height[np.isnan(height)] = 3
+        return height
 
-# def reshape(arr):
-#         result = np.reshape(arr[column], (20,20))
-#         result = result.flatten()
-#         dfArr = pd.DataFrame(result)
-#         dfArr = dfArr.transpose()
-#         arr = arr.to_frame()
-#         arr = arr.drop("layers")
-#         arr = arr.transpose()
-#         arr = arr.reset_index()
-#         dfArr = dfArr.reset_index()
-#         arr = arr.join(dfArr, lsuffix="l")
-#         listofarr.append(arr)
+def reshape(arr):
+        result = np.reshape(arr[column], (20,20))
+        result = result.flatten()
+        dfArr = pd.DataFrame(result)
+        dfArr = dfArr.transpose()
+        arr = arr.to_frame()
+        arr = arr.drop("layers")
+        arr = arr.transpose()
+        arr = arr.reset_index()
+        dfArr = dfArr.reset_index()
+        arr = arr.join(dfArr, lsuffix="l")
+        listofarr.append(arr)
         
 accuracyResult = []
 precisionResult = []
@@ -38,19 +38,20 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         print("Nu bezig met: " + path)
         df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
         df = df.dropna()
-        # listofarr = []
-        # column = "layers"
+        df = df[["date", "target", "layers"]]
+        listofarr = []
+        column = "layers"
 
-        # df[column] = df.apply(normalize, axis=1)
-        # df[column] = df.apply(reshape, axis=1)
+        df[column] = df.apply(normalize, axis=1)
+        df[column] = df.apply(reshape, axis=1)
         
-        # concat_df = pd.concat(listofarr)
+        concat_df = pd.concat(listofarr)
 
-        # df = concat_df.dropna(axis="columns", how="all")
-        # df = df.reset_index(drop=True)
-        # rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
+        df = concat_df.dropna(axis="columns", how="all")
+        df = df.reset_index(drop=True)
+        rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
         # Only rain: 
-        rain_p2000 = df[["past3hours", "date", "target"]]
+        # rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
         all_files = []
         files = os.listdir(directory)
@@ -59,8 +60,11 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         ten_random_files = random.sample(all_files, 10)
         for filename in ten_random_files:
                 test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
+                # Only height:
+                list_399 = [str(x) for x in list(range(400))]
+                test_frame = test_frame[list_399 + ['date', 'target']]
                 # Only rain: 
-                test_frame = test_frame[["past3hours", "date", "target"]]
+                # test_frame = test_frame[["past3hours", "date", "target"]]
                 # print(test_frame)
                 dates_test_frame = test_frame["date"].tolist()
                 print(len(rain_p2000.index))
