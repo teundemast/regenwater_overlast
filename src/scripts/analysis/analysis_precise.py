@@ -49,8 +49,9 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
 
         df = concat_df.dropna(axis="columns", how="all")
         df = df.reset_index(drop=True)
-        print(df)
-        rain_p2000= df.drop(columns=['level_0', 'indexl', 'index'])
+        # print(df)
+        rain_p2000= df.drop(columns=['indexl', 'index'])
+        print(rain_p2000)
         # Only rain: 
         # rain_p2000 = df[["past3hours", "date", "target"]]
         directory = os.fsencode("src/test_frames/") 
