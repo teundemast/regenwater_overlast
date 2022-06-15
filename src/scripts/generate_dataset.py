@@ -330,8 +330,8 @@ strfformat_ensurance = "%d/%m/%Y"
 
 
 dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-input_file = f"postcode6/postcode6_number1.json"
-output_file = f'pkls/postcode6/postcode6_number1.pkl'
+input_file = f"postcode6/postcode6_number2.json"
+output_file = f'pkls/postcode6/postcode6_number2.pkl'
 
 # Time variables
 total = 0
