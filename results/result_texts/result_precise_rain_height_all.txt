@@ -1,0 +1,357 @@
+Fold precise2.pkl
+[[65 50]
+ [30 76]]
+Accuracy: 0.6380090497737556
+Precision: 0.6031746031746031
+Recall: 0.7169811320754716
+
+Fold precise2.pkl
+[[73 39]
+ [37 72]]
+Accuracy: 0.6561085972850679
+Precision: 0.6486486486486487
+Recall: 0.6605504587155964
+
+Fold precise2.pkl
+[[71 39]
+ [43 63]]
+Accuracy: 0.6203703703703703
+Precision: 0.6176470588235294
+Recall: 0.5943396226415094
+
+Fold precise2.pkl
+[[72 35]
+ [41 73]]
+Accuracy: 0.6561085972850679
+Precision: 0.6759259259259259
+Recall: 0.6403508771929824
+
+Fold precise2.pkl
+[[66 35]
+ [45 70]]
+Accuracy: 0.6296296296296297
+Precision: 0.6666666666666666
+Recall: 0.6086956521739131
+
+Fold precise2.pkl
+[[67 43]
+ [38 81]]
+Accuracy: 0.6462882096069869
+Precision: 0.6532258064516129
+Recall: 0.680672268907563
+
+Fold precise2.pkl
+[[75 43]
+ [38 65]]
+Accuracy: 0.6334841628959276
+Precision: 0.6018518518518519
+Recall: 0.6310679611650486
+
+Fold precise2.pkl
+[[75 28]
+ [35 83]]
+Accuracy: 0.7149321266968326
+Precision: 0.7477477477477478
+Recall: 0.7033898305084746
+
+Fold precise2.pkl
+[[76 33]
+ [35 77]]
+Accuracy: 0.6923076923076923
+Precision: 0.7
+Recall: 0.6875
+
+Fold precise2.pkl
+[[73 30]
+ [48 70]]
+Accuracy: 0.6470588235294118
+Precision: 0.7
+Recall: 0.5932203389830508
+
+Fold precise3.pkl
+[[73 29]
+ [50 64]]
+Accuracy: 0.6342592592592593
+Precision: 0.6881720430107527
+Recall: 0.5614035087719298
+
+Fold precise3.pkl
+[[68 28]
+ [45 80]]
+Accuracy: 0.669683257918552
+Precision: 0.7407407407407407
+Recall: 0.64
+
+Fold precise3.pkl
+[[72 35]
+ [47 67]]
+Accuracy: 0.6289592760180995
+Precision: 0.6568627450980392
+Recall: 0.5877192982456141
+
+Fold precise3.pkl
+[[73 35]
+ [49 64]]
+Accuracy: 0.6199095022624435
+Precision: 0.6464646464646465
+Recall: 0.5663716814159292
+
+Fold precise3.pkl
+[[81 40]
+ [35 73]]
+Accuracy: 0.6724890829694323
+Precision: 0.6460176991150443
+Recall: 0.6759259259259259
+
+Fold precise3.pkl
+[[72 36]
+ [44 69]]
+Accuracy: 0.6380090497737556
+Precision: 0.6571428571428571
+Recall: 0.6106194690265486
+
+Fold precise3.pkl
+[[68 42]
+ [39 80]]
+Accuracy: 0.6462882096069869
+Precision: 0.6557377049180327
+Recall: 0.6722689075630253
+
+Fold precise3.pkl
+[[71 30]
+ [43 72]]
+Accuracy: 0.6620370370370371
+Precision: 0.7058823529411765
+Recall: 0.6260869565217392
+
+Fold precise3.pkl
+[[67 30]
+ [48 76]]
+Accuracy: 0.6470588235294118
+Precision: 0.7169811320754716
+Recall: 0.6129032258064516
+
+Fold precise3.pkl
+[[61 52]
+ [40 68]]
+Accuracy: 0.583710407239819
+Precision: 0.5666666666666667
+Recall: 0.6296296296296297
+
+Fold precise4.pkl
+[[66 45]
+ [47 63]]
+Accuracy: 0.583710407239819
+Precision: 0.5833333333333334
+Recall: 0.5727272727272728
+
+Fold precise4.pkl
+[[75 33]
+ [46 67]]
+Accuracy: 0.6425339366515838
+Precision: 0.67
+Recall: 0.5929203539823009
+
+Fold precise4.pkl
+[[69 34]
+ [37 81]]
+Accuracy: 0.6787330316742082
+Precision: 0.7043478260869566
+Recall: 0.6864406779661016
+
+Fold precise4.pkl
+[[82 31]
+ [41 67]]
+Accuracy: 0.6742081447963801
+Precision: 0.6836734693877551
+Recall: 0.6203703703703703
+
+Fold precise4.pkl
+[[74 44]
+ [30 68]]
+Accuracy: 0.6574074074074074
+Precision: 0.6071428571428571
+Recall: 0.6938775510204082
+
+Fold precise4.pkl
+[[74 49]
+ [38 60]]
+Accuracy: 0.6063348416289592
+Precision: 0.5504587155963303
+Recall: 0.6122448979591837
+
+Fold precise4.pkl
+[[71 32]
+ [50 68]]
+Accuracy: 0.6289592760180995
+Precision: 0.68
+Recall: 0.576271186440678
+
+Fold precise4.pkl
+[[70 38]
+ [46 67]]
+Accuracy: 0.6199095022624435
+Precision: 0.638095238095238
+Recall: 0.5929203539823009
+
+Fold precise4.pkl
+[[68 47]
+ [34 72]]
+Accuracy: 0.6334841628959276
+Precision: 0.6050420168067226
+Recall: 0.6792452830188679
+
+Fold precise4.pkl
+[[82 35]
+ [40 64]]
+Accuracy: 0.6606334841628959
+Precision: 0.6464646464646465
+Recall: 0.6153846153846154
+
+Fold precise5.pkl
+[[70 48]
+ [52 59]]
+Accuracy: 0.5633187772925764
+Precision: 0.5514018691588785
+Recall: 0.5315315315315315
+
+Fold precise5.pkl
+[[75 27]
+ [51 63]]
+Accuracy: 0.6388888888888888
+Precision: 0.7
+Recall: 0.5526315789473685
+
+Fold precise5.pkl
+[[60 53]
+ [43 65]]
+Accuracy: 0.5656108597285068
+Precision: 0.5508474576271186
+Recall: 0.6018518518518519
+
+Fold precise5.pkl
+[[69 46]
+ [25 81]]
+Accuracy: 0.6787330316742082
+Precision: 0.6377952755905512
+Recall: 0.7641509433962265
+
+Fold precise5.pkl
+[[74 34]
+ [43 69]]
+Accuracy: 0.65
+Precision: 0.6699029126213593
+Recall: 0.6160714285714286
+
+Fold precise5.pkl
+[[81 36]
+ [39 73]]
+Accuracy: 0.6724890829694323
+Precision: 0.6697247706422018
+Recall: 0.6517857142857143
+
+Fold precise5.pkl
+[[68 40]
+ [43 70]]
+Accuracy: 0.6244343891402715
+Precision: 0.6363636363636364
+Recall: 0.6194690265486725
+
+Fold precise5.pkl
+[[67 49]
+ [36 69]]
+Accuracy: 0.6153846153846154
+Precision: 0.5847457627118644
+Recall: 0.6571428571428571
+
+Fold precise5.pkl
+[[78 29]
+ [54 60]]
+Accuracy: 0.6244343891402715
+Precision: 0.6741573033707865
+Recall: 0.5263157894736842
+
+Fold precise5.pkl
+[[69 42]
+ [40 70]]
+Accuracy: 0.6289592760180995
+Precision: 0.625
+Recall: 0.6363636363636364
+
+Fold precise.pkl
+[[72 40]
+ [40 69]]
+Accuracy: 0.6380090497737556
+Precision: 0.6330275229357798
+Recall: 0.6330275229357798
+
+Fold precise.pkl
+[[77 40]
+ [36 76]]
+Accuracy: 0.6681222707423581
+Precision: 0.6551724137931034
+Recall: 0.6785714285714286
+
+Fold precise.pkl
+[[64 40]
+ [34 78]]
+Accuracy: 0.6574074074074074
+Precision: 0.6610169491525424
+Recall: 0.6964285714285714
+
+Fold precise.pkl
+[[70 45]
+ [39 62]]
+Accuracy: 0.6111111111111112
+Precision: 0.5794392523364486
+Recall: 0.6138613861386139
+
+Fold precise.pkl
+[[83 35]
+ [35 68]]
+Accuracy: 0.6832579185520362
+Precision: 0.6601941747572816
+Recall: 0.6601941747572816
+
+Fold precise.pkl
+[[61 51]
+ [45 64]]
+Accuracy: 0.5656108597285068
+Precision: 0.5565217391304348
+Recall: 0.5871559633027523
+
+Fold precise.pkl
+[[75 36]
+ [50 60]]
+Accuracy: 0.6108597285067874
+Precision: 0.625
+Recall: 0.5454545454545454
+
+Fold precise.pkl
+[[63 50]
+ [40 68]]
+Accuracy: 0.5927601809954751
+Precision: 0.576271186440678
+Recall: 0.6296296296296297
+
+Fold precise.pkl
+[[74 44]
+ [52 59]]
+Accuracy: 0.5807860262008734
+Precision: 0.5728155339805825
+Recall: 0.5315315315315315
+
+Fold precise.pkl
+[[65 50]
+ [29 77]]
+Accuracy: 0.6425339366515838
+Precision: 0.6062992125984252
+Recall: 0.7264150943396226
+
+
+Average accuracy: 0.6367065431928006
+Average precision: 0.6417962394717905
+Average recall: 0.6280336702865046
+Total Confusion matrix: 
+[3565,1955] 
+[2065,3480] 
