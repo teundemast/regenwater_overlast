@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_precise_rain_height.txt", "w+") 
+resultFile = open (resultFolder +"result_precise_rain_height_all.txt", "w+") 
 
 def normalize(row):
         height = row[column]
@@ -58,7 +58,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
         ten_random_files = random.sample(all_files, 10)
         for filename in ten_random_files:
                 test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
-                print(test_frame)
+                # print(test_frame)
                 dates_test_frame = test_frame["date"].tolist()
                 print(len(rain_p2000.index))
                 training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
@@ -78,7 +78,7 @@ for path in ["precise2.pkl",  "precise3.pkl", "precise4.pkl"  ,"precise5.pkl" , 
                 test_features = test_features.astype('float')
 
                 feature_list = list(training_frame.drop(columns=['target']).columns)
-                print(feature_list)    
+                # print(feature_list)    
 
                 rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
                 # print(training_labels)
