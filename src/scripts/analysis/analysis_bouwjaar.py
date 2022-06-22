@@ -89,7 +89,7 @@ for i in range(10):
                 class_names = ['0', '1'],
                 rounded = True, proportion = False, 
                 precision = 2, filled = True)
-    call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
+    call(['dot', '-Tpng', 'tree.dot', '-o', f'tree{i}.png', '-Gdpi=600'])
     print(test_features)
     label_prediction = rf.predict(test_features)  
     confusion = confusion_matrix(test_labels,label_prediction)
