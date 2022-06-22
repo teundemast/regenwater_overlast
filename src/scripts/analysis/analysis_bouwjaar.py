@@ -68,7 +68,7 @@ for train_index, test_index in skf.split(features,labels):
     
     train_labels, test_labels = labels[train_index], labels[test_index]
     len_train_set = list(range(len(train_features)))
-    loop_drop = len_train_set - 1700
+    loop_drop = len(len_train_set) - 1700
     
     for i in range(loop_drop):
         random_number = random.choice(len_train_set)
