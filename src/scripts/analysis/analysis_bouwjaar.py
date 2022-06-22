@@ -53,7 +53,7 @@ features = rain_p2000.drop(columns=['target'])
 # Saving feature names for later use
 feature_list = list(features.columns)
 print(feature_list)    
-
+features = np.asarray(features)
 # #k-fold cross validation
 skf = StratifiedKFold(n_splits=10)
 accuracyResult = []
