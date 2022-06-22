@@ -55,13 +55,13 @@ for i in range(10):
 
     a_tenth = int(len(df.index) / 10)
     test_frame = df.sample(a_tenth)
-    print(test_frame)
+    # print(test_frame)
     dates_test_frame = test_frame["date"].tolist()
     # print(len(df.index))
     training_frame = df[~df["date"].isin(dates_test_frame)]
     # print(len(training_frame.index))
     training_frame = training_frame.sample(1700)
-    print(training_frame)
+    # print(training_frame)
 
     training_frame = training_frame.drop(columns=["date"])
     test_frame = test_frame.drop(columns=["date"])
@@ -77,8 +77,9 @@ for i in range(10):
 
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
     # print(training_labels)
+    print(training_features)
     rf.fit(training_features, training_labels)
-
+    print(test_features)
     label_prediction = rf.predict(test_features)  
     confusion = confusion_matrix(test_labels,label_prediction)
     totalConfusion[0][0] += confusion[0][0]
