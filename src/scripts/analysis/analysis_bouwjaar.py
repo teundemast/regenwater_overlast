@@ -48,12 +48,13 @@ rain_p2000= df.drop(columns=['indexl', 'index'])
 
     
 labels = np.asarray(rain_p2000['target'])
-   
+labels = labels.astype('int')
 features = rain_p2000.drop(columns=['target'])
 # Saving feature names for later use
 feature_list = list(features.columns)
 print(feature_list)    
 features = np.asarray(features)
+features = features.astype('float')
 # #k-fold cross validation
 skf = StratifiedKFold(n_splits=10)
 accuracyResult = []
@@ -64,11 +65,7 @@ n = 0
 for train_index, test_index in skf.split(features,labels):
     print("Train: ", train_index, " Test: ", test_index)
     train_features, test_features = features[train_index], features[test_index]
-    train_features = train_features.astype('float')
-    test_features = test_features.astype('float')
     train_labels, test_labels = labels[train_index], labels[test_index]
-    train_labels = train_labels.astype('int')
-    test_labels = test_labels.astype('int')
     n += 1
     print(len(train_index))
      
