@@ -64,10 +64,10 @@ n = 0
 for train_index, test_index in skf.split(features,labels):
     print("Train: ", train_index, " Test: ", test_index)
     train_features, test_features = features[train_index], features[test_index]
-    training_features = training_features.astype('float')
+    train_features = train_features.astype('float')
     test_features = test_features.astype('float')
     train_labels, test_labels = labels[train_index], labels[test_index]
-    training_labels = training_labels.astype('int')
+    train_labels = train_labels.astype('int')
     test_labels = test_labels.astype('int')
     n += 1
     print(len(train_index))
