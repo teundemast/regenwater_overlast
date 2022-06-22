@@ -63,8 +63,8 @@ for i in range(10):
     training_frame = training_frame.sample(1700)
     # print(training_frame)
     
-    training_frame = training_frame.drop(columns=["date", 'bouwjaar'])
-    test_frame = test_frame.drop(columns=["date", "bouwjaar"])
+    training_frame = training_frame.drop(columns=["date"])
+    test_frame = test_frame.drop(columns=["date"])
 
     training_labels = np.asarray(training_frame['target'])
     training_labels = training_labels.astype('int')
@@ -75,7 +75,7 @@ for i in range(10):
     test_features = np.asarray(test_frame.drop(columns=['target']))
     test_features = test_features.astype('float')
 
-    rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
+    rf = RandomForestClassifier(n_estimators = 1000, random_state = i)
     # print(training_labels)
     print(training_features)
     rf.fit(training_features, training_labels)
