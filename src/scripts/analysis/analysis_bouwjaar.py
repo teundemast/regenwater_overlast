@@ -36,7 +36,7 @@ listofarr = []
 path = "precise_bouwjaar.pkl"
 df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
 df = df.dropna()
-df = df[["target", "layers", "bouwjaar", "past3hours"]]
+df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
 df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
@@ -46,43 +46,37 @@ df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['indexl', 'index'])
 
-    
-labels = np.asarray(rain_p2000['target'])
-labels = labels.astype('int')
-features = rain_p2000.drop(columns=['target'])
-# Saving feature names for later use
-feature_list = list(features.columns)
-print(feature_list)    
-features = np.asarray(features)
-features = features.astype('float')
-# #k-fold cross validation
-skf = StratifiedKFold(n_splits=10)
+a_tenth = len(rain_p2000.index)
 accuracyResult = []
 precisionResult = []
 recallResult = []
 totalConfusion = [[0,0],[0,0]]
-n = 0
-for train_index, test_index in skf.split(features,labels):
-    print("Train: ", train_index, " Test: ", test_index)
-    train_features, test_features = features[train_index], features[test_index]
-    
-    train_labels, test_labels = labels[train_index], labels[test_index]
-    len_train_set = list(range(len(train_index)))
-    loop_drop = len(len_train_set) - 1700
-    print(len(train_features))
-    print(len(train_labels))
-    for i in range(loop_drop):
-        random_number = random.choice(len_train_set)
-        len_train_set.pop()
-        train_features = np.delete(train_features, random_number, 0)
-        train_labels = np.delete(train_labels, random_number, 0)
-    n += 1
-    print(len(train_features))
-    print(len(train_labels))
-    rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)        
-    rf.fit(train_features, train_labels)
-    label_prediction = rf.predict(test_features)
+for i in range(10):
+    test_frame = rain_p2000.sample(a_tenth)
+    dates_test_frame = test_frame["date"].tolist()
+    print(len(rain_p2000.index))
+    training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
+    print(len(training_frame.index))
+    training_frame = training_frame.sample(1700)
 
+    training_frame = training_frame.drop(columns=["date"])
+    test_frame = test_frame.drop(columns=["date"])
+
+    training_labels = np.asarray(training_frame['target'])
+    training_labels = training_labels.astype('int')
+    training_features = np.asarray(training_frame.drop(columns=['target']))
+    training_features = training_features.astype('float')
+    test_labels = np.asarray(test_frame['target'])
+    test_labels = test_labels.astype('int')
+    test_features = np.asarray(test_frame.drop(columns=['target']))
+    test_features = test_features.astype('float')
+
+    feature_list = list(training_frame.drop(columns=['target']).columns)
+    rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)
+    # print(training_labels)
+    rf.fit(training_features, training_labels)
+
+    label_prediction = rf.predict(test_features)  
     confusion = confusion_matrix(test_labels,label_prediction)
     totalConfusion[0][0] += confusion[0][0]
     totalConfusion[0][1] += confusion[0][1]
@@ -93,12 +87,11 @@ for train_index, test_index in skf.split(features,labels):
     precisionResult.append(precision_score(test_labels, label_prediction))
     recallResult.append(recall_score(test_labels, label_prediction))
 
-    resultFile.write("Fold "+str(n)+"\n")
+    resultFile.write("Fold "+i+"\n")
     resultFile.write(str(confusion)+'\n')
     resultFile.write("Accuracy: "+str(metrics.accuracy_score(test_labels, label_prediction))+"\n")
     resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
     resultFile.write("Recall: "+str(recall_score(test_labels, label_prediction)) + "\n\n")
-
 resultFile.write("\nAverage accuracy: "+str(np.average(accuracyResult))+"\n")
 resultFile.write("Average precision: "+str(np.average(precisionResult))+"\n")
 resultFile.write("Average recall: "+ str(np.average(recallResult))+"\n")
