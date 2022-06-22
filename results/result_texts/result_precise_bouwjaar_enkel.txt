@@ -1,0 +1,77 @@
+Fold 0
+[[116   0]
+ [ 12  93]]
+Accuracy: 0.9457013574660633
+Precision: 1.0
+Recall: 0.8857142857142857
+
+Fold 1
+[[118   0]
+ [  9  94]]
+Accuracy: 0.9592760180995475
+Precision: 1.0
+Recall: 0.912621359223301
+
+Fold 2
+[[114   0]
+ [ 12  95]]
+Accuracy: 0.9457013574660633
+Precision: 1.0
+Recall: 0.8878504672897196
+
+Fold 3
+[[108   0]
+ [ 14  99]]
+Accuracy: 0.9366515837104072
+Precision: 1.0
+Recall: 0.8761061946902655
+
+Fold 4
+[[120   0]
+ [ 11  90]]
+Accuracy: 0.9502262443438914
+Precision: 1.0
+Recall: 0.8910891089108911
+
+Fold 5
+[[101   0]
+ [ 20 100]]
+Accuracy: 0.9095022624434389
+Precision: 1.0
+Recall: 0.8333333333333334
+
+Fold 6
+[[108   0]
+ [ 14  99]]
+Accuracy: 0.9366515837104072
+Precision: 1.0
+Recall: 0.8761061946902655
+
+Fold 7
+[[120   0]
+ [ 10  91]]
+Accuracy: 0.9547511312217195
+Precision: 1.0
+Recall: 0.900990099009901
+
+Fold 8
+[[115   0]
+ [  6 100]]
+Accuracy: 0.9728506787330317
+Precision: 1.0
+Recall: 0.9433962264150944
+
+Fold 9
+[[115   0]
+ [ 16  90]]
+Accuracy: 0.9276018099547512
+Precision: 1.0
+Recall: 0.8490566037735849
+
+
+Average accuracy: 0.9438914027149321
+Average precision: 1.0
+Average recall: 0.8856263873050642
+Total Confusion matrix: 
+[1135,0] 
+[124,951] 
