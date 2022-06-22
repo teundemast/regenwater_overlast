@@ -10,7 +10,7 @@ from sklearn.tree import export_graphviz
 from subprocess import call
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_precise_bouwjaar_enkel.txt", "w+") 
+resultFile = open (resultFolder +"result_precise_bouwjaar.txt", "w+") 
 
 column = 'layers'
 def normalize(row):
@@ -45,16 +45,16 @@ for i in range(10):
     path = "precise_bouwjaar.pkl"
     df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
     df = df.dropna()
-    df = df[["target", "bouwjaar", "date"]]
-    # df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
-    # df[column] = df.apply(normalize, axis=1)
-    # df[column] = df.apply(reshape, axis=1)
+    # df = df[["target", "bouwjaar", "date"]]
+    df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
+    df[column] = df.apply(normalize, axis=1)
+    df[column] = df.apply(reshape, axis=1)
 
-    # concat_df = pd.concat(listofarr)
+    concat_df = pd.concat(listofarr)
 
-    # df = concat_df.dropna(axis="columns", how="all")
-    # df = df.reset_index(drop=True)
-    # df= df.drop(columns=['indexl', 'index'])
+    df = concat_df.dropna(axis="columns", how="all")
+    df = df.reset_index(drop=True)
+    df= df.drop(columns=['indexl', 'index'])
 
     a_tenth = int(len(df.index) / 10)
     test_frame = df.sample(a_tenth)
@@ -83,13 +83,13 @@ for i in range(10):
     # print(training_labels)
     print(training_features)
     rf.fit(training_features, training_labels)
-    estimator = rf.estimators_[5]
-    export_graphviz(estimator, out_file='tree.dot', 
-                feature_names = list_training_features,
-                class_names = ['0', '1'],
-                rounded = True, proportion = False, 
-                precision = 2, filled = True)
-    call(['dot', '-Tpng', 'tree.dot', '-o', f'tree{i}.png', '-Gdpi=600'])
+    # estimator = rf.estimators_[5]
+    # export_graphviz(estimator, out_file='tree.dot', 
+    #             feature_names = list_training_features,
+    #             class_names = ['0', '1'],
+    #             rounded = True, proportion = False, 
+    #             precision = 2, filled = True)
+    # call(['dot', '-Tpng', 'tree.dot', '-o', f'tree{i}.png', '-Gdpi=600'])
     print(test_features)
     label_prediction = rf.predict(test_features)  
     confusion = confusion_matrix(test_labels,label_prediction)
