@@ -46,7 +46,7 @@ df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 rain_p2000= df.drop(columns=['indexl', 'index'])
 
-a_tenth = len(rain_p2000.index)
+a_tenth = len(rain_p2000.index) / 10
 accuracyResult = []
 precisionResult = []
 recallResult = []
