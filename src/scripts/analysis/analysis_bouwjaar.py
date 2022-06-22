@@ -44,7 +44,7 @@ concat_df = pd.concat(listofarr)
 
 df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
-rain_p2000= df.drop(columns=['date','indexl', 'index'])
+rain_p2000= df.drop(columns=['indexl', 'index'])
 
     
 labels = np.asarray(rain_p2000['target'])
