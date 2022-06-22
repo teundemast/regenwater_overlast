@@ -152,7 +152,7 @@ data0 = {'target': [], 'past3hours': [], 'layers': [], "date": [], 'bouwjaar':[]
 
 
 def sample_dependent(data):
-    data0['bouwjaar'] = data['bouwjaar']
+    data0['bouwjaar'].append(data['bouwjaar'])
     data0['target'].append(0)
     max_rain = data["past3hours"]
     data0["past3hours"].append(random.randint(rain_treshold, max_rain))
