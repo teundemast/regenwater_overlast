@@ -62,9 +62,9 @@ for i in range(10):
     # print(len(training_frame.index))
     training_frame = training_frame.sample(1700)
     # print(training_frame)
-
-    training_frame = training_frame.drop(columns=["date"])
-    test_frame = test_frame.drop(columns=["date"])
+    
+    training_frame = training_frame.drop(columns=["date", 'bouwjaar'])
+    test_frame = test_frame.drop(columns=["date", "bouwjaar"])
 
     training_labels = np.asarray(training_frame['target'])
     training_labels = training_labels.astype('int')
