@@ -65,9 +65,18 @@ n = 0
 for train_index, test_index in skf.split(features,labels):
     print("Train: ", train_index, " Test: ", test_index)
     train_features, test_features = features[train_index], features[test_index]
+    
     train_labels, test_labels = labels[train_index], labels[test_index]
+    len_train_set = list(range(len(train_features)))
+    loop_drop = len_train_set - 1700
+    
+    for i in range(loop_drop):
+        random_number = random.choice(len_train_set)
+        len_train_set = len_train_set.remove(random_number)
+        train_features = np.delete(train_features, random_number, 0)
+        train_labels = np.delete(train_features, random_number, 0)
     n += 1
-    print(len(train_index))
+    print(len(train_features))
      
     rf = RandomForestClassifier(n_estimators = 1000, random_state = 42)        
     rf.fit(train_features, train_labels)
