@@ -87,7 +87,7 @@ for i in range(10):
     precisionResult.append(precision_score(test_labels, label_prediction))
     recallResult.append(recall_score(test_labels, label_prediction))
 
-    resultFile.write("Fold "+i+"\n")
+    resultFile.write("Fold "+str(i)+"\n")
     resultFile.write(str(confusion)+'\n')
     resultFile.write("Accuracy: "+str(metrics.accuracy_score(test_labels, label_prediction))+"\n")
     resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
