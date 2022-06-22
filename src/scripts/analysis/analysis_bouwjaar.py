@@ -75,7 +75,7 @@ for train_index, test_index in skf.split(features,labels):
         random_number = random.choice(len_train_set)
         len_train_set.pop()
         train_features = np.delete(train_features, random_number, 0)
-        train_labels = np.delete(train_features, random_number, 0)
+        train_labels = np.delete(train_labels, random_number, 0)
     n += 1
     print(len(train_features))
     print(len(train_labels))
