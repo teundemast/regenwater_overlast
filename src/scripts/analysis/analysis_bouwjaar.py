@@ -6,6 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold
 from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
+from sklearn.tree import export_graphviz
+from subprocess import call
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
 resultFile = open (resultFolder +"result_precise_bouwjaar_enkel.txt", "w+") 
@@ -69,6 +71,7 @@ for i in range(10):
 
     training_labels = np.asarray(training_frame['target'])
     training_labels = training_labels.astype('int')
+    list_training_features = list(training_frame.drop(columns=['target']).columns)
     training_features = np.asarray(training_frame.drop(columns=['target']))
     training_features = training_features.astype('float')
     test_labels = np.asarray(test_frame['target'])
@@ -80,6 +83,13 @@ for i in range(10):
     # print(training_labels)
     print(training_features)
     rf.fit(training_features, training_labels)
+    estimator = rf.estimators_[5]
+    export_graphviz(estimator, out_file='tree.dot', 
+                feature_names = list_training_features,
+                class_names = ['0', '1'],
+                rounded = True, proportion = False, 
+                precision = 2, filled = True)
+    call(['dot', '-Tpng', 'tree.dot', '-o', 'tree.png', '-Gdpi=600'])
     print(test_features)
     label_prediction = rf.predict(test_features)  
     confusion = confusion_matrix(test_labels,label_prediction)
