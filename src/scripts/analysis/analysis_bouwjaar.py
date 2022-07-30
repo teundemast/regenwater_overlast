@@ -46,7 +46,7 @@ path = "precise_bouwjaar.pkl"
 df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
 df = df.dropna()
 # df = df[["target", "bouwjaar", "date"]]
-df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
+df = df[["target", "layers", "bouwjaar", "past3hours"]]
 df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
