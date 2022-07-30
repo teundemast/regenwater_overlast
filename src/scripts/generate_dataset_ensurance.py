@@ -56,29 +56,6 @@ def get_precipitation_data_ensurance(row):
     return peak
 
 
-def get_precipitation_data(row):
-    global count
-    count += 1
-    now = time.time()
-    avg_time = (now-btime)/count
-    left = total-count
-    if count % 10 == 0:
-        print('====== rain ')
-        print('time spent', now-btime)
-        print('did', count, 'examples')
-        print('avg', avg_time)
-        print('left', left)
-        print('time left', left*avg_time)
-        print('======')
-
-    date = row['date']
-    date = datetime.strptime(str(row['date']), strfformat)
-    lat = row['lat']
-    lon = row['lng']
-
-    return get_past3hours(date, lat, lon)
-
-
 def get_past3hours(date, lat, lon):
     rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, date.hour, date.minute, lat, lon, 3)
     return sum(rain)
