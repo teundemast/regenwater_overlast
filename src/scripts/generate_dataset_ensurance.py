@@ -25,10 +25,8 @@ btime = time.time()
 rain_treshold = 500
 
 
-def parse_datetime(data, ensurance=False):
-    if ensurance:
-        return datetime.strptime(str(data['date']).strip(), strfformat_ensurance)
-    return datetime.strptime(str(data['date']).strip(), strfformat)
+def parse_datetime(data):
+    return datetime.strptime(str(data['date']).strip(), strfformat_ensurance)
 
 
 def get_precipitation_data_ensurance(row):
@@ -101,7 +99,7 @@ total = len(df1)
 count = 0
 btime = time.time()
 df1 = df1.sort_values(by=['date'])
-df1['past3hours'] = df1.apply(get_precipitation_data, axis=1)
+df1['past3hours'] = df1.apply(get_precipitation_data_ensurance, axis=1)
 
 # Step 4: Filter out water damage notifications which are not caused by rain
 df1 = df1[(df1.past3hours > rain_treshold)]
