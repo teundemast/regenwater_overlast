@@ -92,7 +92,7 @@ df1 = df1.dropna()
 df1['target'] = 1
 
 # Step 2: Filter out dates which are out of the scope
-df1['date'] = df1.apply(parse_datetime, axis=1)
+# df1['date'] = df1.apply(parse_datetime, axis=1)
 df1 = df1[(begin < df1['date']) & (df1['date'] < end)]
 
 # Step 3: Enrich instances with rain information
