@@ -50,9 +50,12 @@ def get_precipitation_data_ensurance(row):
     rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, 23, 59, lat, lon, 24)
     peak = 0
     for idx, sum in enumerate(rain):
-        sum_3hours = sum + rain[idx + 1] + rain[idx + 2]
-        if sum_3hours > peak:
-            peak = sum_3hours
+        try: 
+            sum_3hours = sum + rain[idx + 1] + rain[idx + 2]
+            if sum_3hours > peak:
+                peak = sum_3hours
+        except IndexError:
+            break
     return peak
 
 
@@ -67,7 +70,7 @@ df1 = df1.dropna()
 df1['target'] = 1
 
 # Step 2: Filter out dates which are out of the scope
-df1['date'] = df1.apply(parse_datetime, axis=1)
+# df1['date'] = df1.apply(parse_datetime, axis=1)
 df1 = df1[(begin < df1['date']) & (df1['date'] < end)]
 
 # Step 3: Enrich instances with rain information
