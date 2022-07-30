@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_precise_bouwjaar_just.txt", "w+") 
+resultFile = open(resultFolder +"result_precise_bouwjaar_just.txt", "w+") 
 
 column = 'layers'
 def normalize(row):
@@ -104,7 +104,7 @@ for train_index, test_index in skf.split(features, labels):
         resultFile.write("Accuracy: "+str(metrics.accuracy_score(test_labels, label_prediction))+"\n")
         resultFile.write("Precision: "+str(precision_score(test_labels, label_prediction))+"\n")
         resultFile.write("Recall: "+str(recall_score(test_labels, label_prediction)) + "\n\n")
-
+        print(str(metrics.accuracy_score(test_labels, label_prediction)))
         # tree = rf.estimators_[4]# Import tools needed for visualization
         # from sklearn.tree import export_graphviz
         # import pydot# Pull out one tree from the forest
@@ -118,17 +118,16 @@ for train_index, test_index in skf.split(features, labels):
         #output cross validation performance
         #all_accuracies = cross_val_score(estimator=rf, X=features, y=labels, cv=10)
 
-        fig, ax = plt.subplots()
-        data = [accuracyResult, precisionResult, recallResult]
-        xlabels = ["Accuracy", "Precision", "Recall"]
-        ax.boxplot(data)
-        ax.set_xticklabels(xlabels)
-        ax.set_ylim(0,1)
+fig, ax = plt.subplots()
+data = [accuracyResult, precisionResult, recallResult]
+xlabels = ["Accuracy", "Precision", "Recall"]
+ax.boxplot(data)
+ax.set_xticklabels(xlabels)
+ax.set_ylim(0,1)
 
-        resultFile.write("\nAverage Accuracy: "+str(np.average(accuracyResult))+"\n")
-        resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
-        resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
-        resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
-        resultFile.close()
-        #print(cross_val_score(estimator=rf, X=features, y=labels, cv=skf, scoring="accuracy"))
-        plt.savefig(resultFolder+"boxplotMeasures.png")
+resultFile.write("\nAverage Accuracy: "+str(np.average(accuracyResult))+"\n")
+resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
+resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
+resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
+#print(cross_val_score(estimator=rf, X=features, y=labels, cv=skf, scoring="accuracy"))
+plt.savefig(resultFolder+"boxplotMeasures.png")
