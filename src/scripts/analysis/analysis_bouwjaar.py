@@ -56,7 +56,7 @@ df = concat_df.dropna(axis="columns", how="all")
 df = df.reset_index(drop=True)
 df= df.drop(columns=['indexl', 'index'])
 
-
+df["target"] = df["target"].astype(int)
     
 labels = np.array(df['target'])
 
