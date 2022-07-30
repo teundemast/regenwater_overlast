@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open(resultFolder +"result_precise_bouwjaar_just.txt", "w+") 
+resultFile = open(resultFolder +"result_precise_bouwjaar_no_bouwjaar.txt", "w+") 
 
 column = 'layers'
 def normalize(row):
@@ -46,7 +46,7 @@ path = "precise_bouwjaar.pkl"
 df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
 df = df.dropna()
 # df = df[["target", "bouwjaar", "date"]]
-df = df[["target", "layers", "bouwjaar", "past3hours"]]
+df = df[["target", "layers", "past3hours"]]
 df[column] = df.apply(normalize, axis=1)
 df[column] = df.apply(reshape, axis=1)
 
@@ -130,4 +130,4 @@ resultFile.write("Average Precision: "+str(np.average(precisionResult))+"\n")
 resultFile.write("Average Recall: "+ str(np.average(recallResult))+"\n")
 resultFile.write("Total Confusion matrix: \n["+str(totalConfusion[0][0])+","+ str(totalConfusion[0][1])+"] \n"+"["+str(totalConfusion[1][0])+","+ str(totalConfusion[1][1])+"] \n")
 #print(cross_val_score(estimator=rf, X=features, y=labels, cv=skf, scoring="accuracy"))
-plt.savefig(resultFolder+"boxplotMeasures.png")
+# plt.savefig(resultFolder+"boxplotMeasures.png")
