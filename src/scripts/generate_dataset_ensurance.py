@@ -12,8 +12,8 @@ end = '2022-01-30 23:59:59'
 strfformat = "%Y-%m-%d %H:%M:%S"
 strfformat_ensurance = "%d/%m/%Y"
 
-dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-input_file = f"postcode6/postcode6_number5.json"
+dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/ensurance/'
+input_file = f"ensurance_transformed1.json"
 output_file = f'pkls/postcode6/postcode6_number5.pkl'
 
 # Time variables
