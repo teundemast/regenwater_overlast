@@ -31,33 +31,6 @@ def parse_datetime(data, ensurance=False):
     return datetime.strptime(str(data['date']).strip(), strfformat)
 
 
-def get_precipitation_data_ensurance(row):
-    date = row['date']
-
-    global count
-    count += 1
-    now = time.time()
-    avg_time = (now-btime)/count
-    left = total-count
-    if count % 10 == 0:
-        print('====== rain ')
-        print('time spent', now-btime)
-        print('did', count, 'examples')
-        print('avg', avg_time)
-        print('left', left)
-        print('time left', left*avg_time)
-        print('======')
-    lat = row['lat']
-    lon = row['lng']
-    rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, 23, 59, lat, lon, 24)
-    peak = 0
-    for idx, sum in enumerate(rain):
-        sum_3hours = sum + rain[idx + 1] + rain[idx + 2]
-        if sum_3hours > peak:
-            peak = sum_3hours
-    return peak
-
-
 def get_precipitation_data(row):
     global count
     count += 1
@@ -92,7 +65,7 @@ df1 = df1.dropna()
 df1['target'] = 1
 
 # Step 2: Filter out dates which are out of the scope
-# df1['date'] = df1.apply(parse_datetime, axis=1)
+df1['date'] = df1.apply(parse_datetime, axis=1)
 df1 = df1[(begin < df1['date']) & (df1['date'] < end)]
 
 # Step 3: Enrich instances with rain information
