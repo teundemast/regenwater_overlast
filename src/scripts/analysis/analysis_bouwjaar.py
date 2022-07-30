@@ -10,7 +10,7 @@ from sklearn.tree import export_graphviz
 from subprocess import call
 
 resultFolder ="/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open (resultFolder +"result_precise_bouwjaar.txt", "w+") 
+resultFile = open (resultFolder +"result_precise_bouwjaar_just.txt", "w+") 
 
 column = 'layers'
 def normalize(row):
@@ -45,16 +45,16 @@ for i in range(10):
     path = "precise_bouwjaar.pkl"
     df = pd.read_pickle(f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/{path}").reset_index()
     df = df.dropna()
-    # df = df[["target", "bouwjaar", "date"]]
-    df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
-    df[column] = df.apply(normalize, axis=1)
-    df[column] = df.apply(reshape, axis=1)
+    df = df[["target", "bouwjaar", "date"]]
+#     df = df[["target", "layers", "bouwjaar", "past3hours", "date"]]
+#     df[column] = df.apply(normalize, axis=1)
+#     df[column] = df.apply(reshape, axis=1)
 
-    concat_df = pd.concat(listofarr)
+#     concat_df = pd.concat(listofarr)
 
-    df = concat_df.dropna(axis="columns", how="all")
-    df = df.reset_index(drop=True)
-    df= df.drop(columns=['indexl', 'index'])
+#     df = concat_df.dropna(axis="columns", how="all")
+#     df = df.reset_index(drop=True)
+#     df= df.drop(columns=['indexl', 'index'])
 
     a_tenth = int(len(df.index) / 10)
     test_frame = df.sample(a_tenth)
