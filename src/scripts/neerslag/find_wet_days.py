@@ -15,10 +15,11 @@ def find_wet_days(year, out_file):
     with open(out_file, 'w') as f:   
         for day in wet_days:
             f.write(day)
+            f.write("\n")
         
             
 if __name__ == '__main__':
-    year = 2017
-    out_file = f"wet_days{year}.txt"
-    find_wet_days(2017, out_file)
+    for year in range(2017,2022):
+        out_file = f"wet_days{year}.txt"
+        find_wet_days(2017, out_file)
             
