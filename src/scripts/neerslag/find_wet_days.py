@@ -5,8 +5,8 @@ PNL = precipitation_nl.PrecipitationNL(queue_size=300)
 
 def find_wet_days(year):
     wet_days = []
-    for month in range(12):
-        for day in range(28):
+    for month in range(1,13):
+        for day in range(1,28):
             day_fall = PNL.get_precipation_data_past_hours_list(year, month, day, 23, 59, 52.1092717, 5.1809676, 23)
             sum_day_fall = sum(day_fall)
             print(sum_day_fall)
