@@ -21,5 +21,5 @@ def find_wet_days(year, out_file):
 if __name__ == '__main__':
     for year in range(2017,2022):
         out_file = f"wet_days{year}.txt"
-        find_wet_days(2017, out_file)
+        find_wet_days(year, out_file)
             
