@@ -18,6 +18,6 @@ def find_wet_days(year, out_file):
             
 if __name__ == '__main__':
     year = 2017
-    out_file = "wet_days{year}.txt"
+    out_file = f"wet_days{year}.txt"
     find_wet_days(2017, out_file)
             
