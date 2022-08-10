@@ -13,8 +13,8 @@ strfformat = "%Y-%m-%d %H:%M:%S"
 strfformat_ensurance = "%d/%m/%Y"
 
 dir_ = '/local/s2656566/wateroverlast/regenwater_overlast/src/data/'
-input_file = f"ensurance/ensurance_transformed1.json"
-output_file = f'pkls/ensurance/ensurance_number1.pkl'
+input_file = f"ensurance/ensurance_transformed0.json"
+output_file = f'pkls/ensurance/ensurance_number0.pkl'
 
 # Time variables
 total = 0
