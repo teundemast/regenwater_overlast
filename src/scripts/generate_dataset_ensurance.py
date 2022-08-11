@@ -52,9 +52,9 @@ def get_precipitation_data_ensurance(row):
     time.sleep(1)
     print(sum(rain))
     peak = 0
-    for idx, sum in enumerate(rain):
+    for idx, sumi in enumerate(rain):
         try: 
-            sum_3hours = sum + rain[idx + 1] + rain[idx + 2]
+            sum_3hours = sumi + rain[idx + 1] + rain[idx + 2]
             if sum_3hours > peak:
                 peak = sum_3hours
         except IndexError:
