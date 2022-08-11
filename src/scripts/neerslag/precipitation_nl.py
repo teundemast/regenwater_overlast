@@ -95,8 +95,9 @@ class PrecipitationNL(object):
 			rain = self.get_precipation_data(date.year, date.month, date.day, date.hour, date.minute, lat, lon)
 			if rain != 65533 and rain != 65535:
 				_sum += rain
+				lst.append(rain)
 			date = date-delta
-			lst.append(rain)
+
 
 		return lst
 
