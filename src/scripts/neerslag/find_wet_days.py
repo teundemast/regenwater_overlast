@@ -10,7 +10,7 @@ def find_wet_days(year, out_file):
         for day in range(1,28):
             day_fall = PNL.get_precipation_data_past_hours_list(year, month, day, 23, 59, 52.1092717, 5.1809676, 23)
             sum_day_fall = sum(day_fall)
-            if sum_day_fall > 700:
+            if sum_day_fall > 1500:
                 wet_days.append(f"{year}-{month}-{day}")
     with open(out_file, 'w') as f:   
         for day in wet_days:
