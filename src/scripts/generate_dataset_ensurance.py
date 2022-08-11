@@ -48,9 +48,7 @@ def get_precipitation_data_ensurance(row):
     lat = row['lat']
     lon = row['lng']
     rain = PNL.get_precipation_data_past_hours_list(date.year, date.month, date.day, 23, 59, lat, lon, 24)
-    print(rain)
-    time.sleep(1)
-    print(sum(rain))
+
     peak = 0
     for idx, sumi in enumerate(rain):
         try: 
