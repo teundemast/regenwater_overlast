@@ -40,7 +40,7 @@ totalConfusion = [[0, 0], [0, 0]]
 path = "ensurance_number0.pkl"
 
 df = pd.read_pickle(
-    f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/postcode4/{path}").reset_index()
+    f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
 df = df.dropna()
 df = df[["date", "target", "layers", "past3hours"]]
 listofarr = []
