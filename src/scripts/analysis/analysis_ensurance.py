@@ -68,11 +68,10 @@ for filename in ten_random_files:
     # test_frame = test_frame[list_399 + ['date', 'target']]
     # # print(test_frame)
     # # print(test_frame)
-    dates_test_frame = test_frame["date"].tolist()
-    print(len(rain_p2000.index))
-    training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
-    print(len(training_frame.index))
-    training_frame = training_frame.sample(1700)
+    # dates_test_frame = test_frame["date"].tolist()
+    # print(len(rain_p2000.index))
+    # training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
+    # print(len(training_frame.index))
 
     training_frame = training_frame.drop(columns=["date"])
     test_frame = test_frame.drop(columns=["date"])
