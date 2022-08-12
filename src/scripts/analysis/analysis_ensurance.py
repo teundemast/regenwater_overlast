@@ -70,12 +70,12 @@ for filename in ten_random_files:
     # # print(test_frame)
     # dates_test_frame = test_frame["date"].tolist()
     # print(len(rain_p2000.index))
-    # training_frame = rain_p2000[~rain_p2000["date"].isin(dates_test_frame)]
+    training_frame = rain_p2000
     # print(len(training_frame.index))
 
     training_frame = training_frame.drop(columns=["date"])
     test_frame = test_frame.drop(columns=["date"])
-
+    print(training_frame, test_frame)
     training_labels = np.asarray(training_frame['target'])
     training_labels = training_labels.astype('int')
     training_features = np.asarray(training_frame.drop(columns=['target']))
