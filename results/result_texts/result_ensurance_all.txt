@@ -1,51 +1,37 @@
 Fold ensurance_number0.pkl
-[[ 32  69]
- [  9 106]]
-Accuracy: 0.6388888888888888
-Precision: 0.6057142857142858
-Recall: 0.9217391304347826
+[[ 28  75]
+ [ 13 105]]
+Accuracy: 0.6018099547511312
+Precision: 0.5833333333333334
+Recall: 0.8898305084745762
 
 Fold ensurance_number0.pkl
-[[31 77]
- [14 99]]
-Accuracy: 0.5882352941176471
-Precision: 0.5625
-Recall: 0.8761061946902655
+[[39 77]
+ [16 89]]
+Accuracy: 0.579185520361991
+Precision: 0.536144578313253
+Recall: 0.8476190476190476
 
 Fold ensurance_number0.pkl
-[[34 80]
- [10 97]]
-Accuracy: 0.5927601809954751
-Precision: 0.5480225988700564
-Recall: 0.9065420560747663
+[[38 77]
+ [11 90]]
+Accuracy: 0.5925925925925926
+Precision: 0.5389221556886228
+Recall: 0.8910891089108911
 
 Fold ensurance_number0.pkl
-[[38 73]
- [17 93]]
-Accuracy: 0.5927601809954751
-Precision: 0.5602409638554217
-Recall: 0.8454545454545455
+[[31 76]
+ [16 98]]
+Accuracy: 0.583710407239819
+Precision: 0.5632183908045977
+Recall: 0.8596491228070176
 
 Fold ensurance_number0.pkl
-[[29 80]
- [16 96]]
-Accuracy: 0.5656108597285068
-Precision: 0.5454545454545454
-Recall: 0.8571428571428571
-
-Fold ensurance_number0.pkl
-[[31 82]
- [14 94]]
-Accuracy: 0.5656108597285068
-Precision: 0.5340909090909091
-Recall: 0.8703703703703703
-
-Fold ensurance_number0.pkl
-[[45 73]
- [ 7 96]]
-Accuracy: 0.6380090497737556
-Precision: 0.5680473372781065
-Recall: 0.9320388349514563
+[[32 84]
+ [ 9 96]]
+Accuracy: 0.579185520361991
+Precision: 0.5333333333333333
+Recall: 0.9142857142857143
 
 Fold ensurance_number0.pkl
 [[ 34  74]
@@ -55,23 +41,317 @@ Precision: 0.5795454545454546
 Recall: 0.9026548672566371
 
 Fold ensurance_number0.pkl
-[[34 90]
- [ 3 94]]
-Accuracy: 0.579185520361991
-Precision: 0.5108695652173914
-Recall: 0.9690721649484536
+[[34 80]
+ [10 97]]
+Accuracy: 0.5927601809954751
+Precision: 0.5480225988700564
+Recall: 0.9065420560747663
 
 Fold ensurance_number0.pkl
-[[36 75]
- [14 96]]
+[[38 64]
+ [17 97]]
+Accuracy: 0.625
+Precision: 0.6024844720496895
+Recall: 0.8508771929824561
+
+Fold ensurance_number0.pkl
+[[ 24  77]
+ [ 10 105]]
+Accuracy: 0.5972222222222222
+Precision: 0.5769230769230769
+Recall: 0.9130434782608695
+
+Fold ensurance_number0.pkl
+[[ 26  78]
+ [  8 104]]
+Accuracy: 0.6018518518518519
+Precision: 0.5714285714285714
+Recall: 0.9285714285714286
+
+Fold ensurance_number1.pkl
+[[35 76]
+ [16 94]]
+Accuracy: 0.583710407239819
+Precision: 0.5529411764705883
+Recall: 0.8545454545454545
+
+Fold ensurance_number1.pkl
+[[ 27  74]
+ [ 11 104]]
+Accuracy: 0.6064814814814815
+Precision: 0.5842696629213483
+Recall: 0.9043478260869565
+
+Fold ensurance_number1.pkl
+[[40 84]
+ [ 2 95]]
+Accuracy: 0.6108597285067874
+Precision: 0.5307262569832403
+Recall: 0.979381443298969
+
+Fold ensurance_number1.pkl
+[[ 29  68]
+ [ 18 106]]
+Accuracy: 0.6108597285067874
+Precision: 0.6091954022988506
+Recall: 0.8548387096774194
+
+Fold ensurance_number1.pkl
+[[ 34  71]
+ [  9 107]]
+Accuracy: 0.6380090497737556
+Precision: 0.601123595505618
+Recall: 0.9224137931034483
+
+Fold ensurance_number1.pkl
+[[ 33  75]
+ [ 12 101]]
+Accuracy: 0.6063348416289592
+Precision: 0.5738636363636364
+Recall: 0.8938053097345132
+
+Fold ensurance_number1.pkl
+[[37 81]
+ [15 96]]
+Accuracy: 0.5807860262008734
+Precision: 0.5423728813559322
+Recall: 0.8648648648648649
+
+Fold ensurance_number1.pkl
+[[37 76]
+ [14 94]]
+Accuracy: 0.5927601809954751
+Precision: 0.5529411764705883
+Recall: 0.8703703703703703
+
+Fold ensurance_number1.pkl
+[[46 72]
+ [ 8 95]]
+Accuracy: 0.6380090497737556
+Precision: 0.5688622754491018
+Recall: 0.9223300970873787
+
+Fold ensurance_number1.pkl
+[[41 66]
+ [15 99]]
+Accuracy: 0.6334841628959276
+Precision: 0.6
+Recall: 0.868421052631579
+
+Fold ensurance_number2.pkl
+[[30 78]
+ [16 96]]
+Accuracy: 0.5727272727272728
+Precision: 0.5517241379310345
+Recall: 0.8571428571428571
+
+Fold ensurance_number2.pkl
+[[ 41  57]
+ [ 17 106]]
+Accuracy: 0.665158371040724
+Precision: 0.6503067484662577
+Recall: 0.8617886178861789
+
+Fold ensurance_number2.pkl
+[[34 79]
+ [14 94]]
+Accuracy: 0.579185520361991
+Precision: 0.5433526011560693
+Recall: 0.8703703703703703
+
+Fold ensurance_number2.pkl
+[[ 34  83]
+ [  8 104]]
+Accuracy: 0.6026200873362445
+Precision: 0.5561497326203209
+Recall: 0.9285714285714286
+
+Fold ensurance_number2.pkl
+[[38 80]
+ [15 96]]
+Accuracy: 0.5851528384279476
+Precision: 0.5454545454545454
+Recall: 0.8648648648648649
+
+Fold ensurance_number2.pkl
+[[ 27  77]
+ [  9 103]]
+Accuracy: 0.6018518518518519
+Precision: 0.5722222222222222
+Recall: 0.9196428571428571
+
+Fold ensurance_number2.pkl
+[[32 76]
+ [15 98]]
+Accuracy: 0.5882352941176471
+Precision: 0.5632183908045977
+Recall: 0.8672566371681416
+
+Fold ensurance_number2.pkl
+[[ 29  78]
+ [ 11 103]]
 Accuracy: 0.5972850678733032
-Precision: 0.5614035087719298
-Recall: 0.8727272727272727
+Precision: 0.569060773480663
+Recall: 0.9035087719298246
+
+Fold ensurance_number2.pkl
+[[ 26  84]
+ [ 13 106]]
+Accuracy: 0.5764192139737991
+Precision: 0.5578947368421052
+Recall: 0.8907563025210085
+
+Fold ensurance_number2.pkl
+[[37 79]
+ [15 90]]
+Accuracy: 0.5746606334841629
+Precision: 0.5325443786982249
+Recall: 0.8571428571428571
+
+Fold ensurance_number3.pkl
+[[34 73]
+ [17 97]]
+Accuracy: 0.5927601809954751
+Precision: 0.5705882352941176
+Recall: 0.8508771929824561
+
+Fold ensurance_number3.pkl
+[[ 32  89]
+ [  4 104]]
+Accuracy: 0.5938864628820961
+Precision: 0.538860103626943
+Recall: 0.9629629629629629
+
+Fold ensurance_number3.pkl
+[[39 73]
+ [15 94]]
+Accuracy: 0.6018099547511312
+Precision: 0.562874251497006
+Recall: 0.8623853211009175
+
+Fold ensurance_number3.pkl
+[[44 74]
+ [ 8 95]]
+Accuracy: 0.6289592760180995
+Precision: 0.5621301775147929
+Recall: 0.9223300970873787
+
+Fold ensurance_number3.pkl
+[[35 79]
+ [12 95]]
+Accuracy: 0.5882352941176471
+Precision: 0.5459770114942529
+Recall: 0.8878504672897196
+
+Fold ensurance_number3.pkl
+[[33 76]
+ [18 94]]
+Accuracy: 0.5746606334841629
+Precision: 0.5529411764705883
+Recall: 0.8392857142857143
+
+Fold ensurance_number3.pkl
+[[38 80]
+ [14 97]]
+Accuracy: 0.5895196506550219
+Precision: 0.5480225988700564
+Recall: 0.8738738738738738
+
+Fold ensurance_number3.pkl
+[[33 90]
+ [10 88]]
+Accuracy: 0.5475113122171946
+Precision: 0.4943820224719101
+Recall: 0.8979591836734694
+
+Fold ensurance_number3.pkl
+[[26 85]
+ [17 93]]
+Accuracy: 0.5384615384615384
+Precision: 0.5224719101123596
+Recall: 0.8454545454545455
+
+Fold ensurance_number3.pkl
+[[38 73]
+ [18 92]]
+Accuracy: 0.5882352941176471
+Precision: 0.5575757575757576
+Recall: 0.8363636363636363
+
+Fold ensurance_number4.pkl
+[[44 65]
+ [13 99]]
+Accuracy: 0.6470588235294118
+Precision: 0.6036585365853658
+Recall: 0.8839285714285714
+
+Fold ensurance_number4.pkl
+[[ 41  57]
+ [ 17 106]]
+Accuracy: 0.665158371040724
+Precision: 0.6503067484662577
+Recall: 0.8617886178861789
+
+Fold ensurance_number4.pkl
+[[ 27  83]
+ [ 11 108]]
+Accuracy: 0.5895196506550219
+Precision: 0.5654450261780105
+Recall: 0.907563025210084
+
+Fold ensurance_number4.pkl
+[[39 73]
+ [14 95]]
+Accuracy: 0.6063348416289592
+Precision: 0.5654761904761905
+Recall: 0.8715596330275229
+
+Fold ensurance_number4.pkl
+[[ 29  74]
+ [ 14 104]]
+Accuracy: 0.6018099547511312
+Precision: 0.5842696629213483
+Recall: 0.8813559322033898
+
+Fold ensurance_number4.pkl
+[[27 82]
+ [16 96]]
+Accuracy: 0.5565610859728507
+Precision: 0.5393258426966292
+Recall: 0.8571428571428571
+
+Fold ensurance_number4.pkl
+[[28 87]
+ [10 96]]
+Accuracy: 0.5610859728506787
+Precision: 0.5245901639344263
+Recall: 0.9056603773584906
+
+Fold ensurance_number4.pkl
+[[34 78]
+ [14 95]]
+Accuracy: 0.583710407239819
+Precision: 0.5491329479768786
+Recall: 0.8715596330275229
+
+Fold ensurance_number4.pkl
+[[ 35  70]
+ [ 16 100]]
+Accuracy: 0.6108597285067874
+Precision: 0.5882352941176471
+Recall: 0.8620689655172413
+
+Fold ensurance_number4.pkl
+[[36 75]
+ [17 93]]
+Accuracy: 0.583710407239819
+Precision: 0.5535714285714286
+Recall: 0.8454545454545455
 
 
-Average accuracy: 0.5973730517848164
-Average precision: 0.5575889168798102
-Average recall: 0.8953848294051407
+Average accuracy: 0.5972628503015095
+Average precision: 0.563428307672738
+Average recall: 0.8837590432943165
 Total Confusion matrix: 
-[344,773] 
-[115,973] 
+[1703,3812] 
+[649,4911] 
