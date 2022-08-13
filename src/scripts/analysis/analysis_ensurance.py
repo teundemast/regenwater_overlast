@@ -37,7 +37,7 @@ accuracyResult = []
 precisionResult = []
 recallResult = []
 totalConfusion = [[0, 0], [0, 0]]
-paths = ["ensurance_number0.pkl", "ensurance_number1.pkl", "ensurance_number2.pkl", "ensurance_number3.pkl", "ensurance_number4.pkl"
+paths = ["ensurance_number0.pkl", "ensurance_number1.pkl", "ensurance_number2.pkl", "ensurance_number3.pkl", "ensurance_number4.pkl"]
 for path in paths:
     df = pd.read_pickle(
         f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
