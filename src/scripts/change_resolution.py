@@ -49,8 +49,9 @@ def get_random_house_sub(postcode, postcodes_df, headers):
 
 def get_random_house(postcode: str, resolution: str, postcodes_df: pd.DataFrame, original_postcode=None, tries=0, ensurance=False):
 
-    headers = {"X-Api-Key": "l7278482b41574492381d6718238dada21",
-               "Accept-Crs": "epsg:28992"}
+    # Fill in api key:
+    headers = {"X-Api-Key": "APIKEY",
+               "Accept-Crs": "epsg:xxxx"}
 
     if resolution == "postcode6":
         postcode_without_spaces = postcode.replace(" ", "")
