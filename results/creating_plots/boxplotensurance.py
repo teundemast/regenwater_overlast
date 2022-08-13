@@ -7,7 +7,7 @@ sns.set_style("darkgrid")
 dict_height_and_rain = {
     "Performance": [],
     "Values": [],
-    "Resolution": [],
+    "Resolution": []
 }
 
 files = ["result_ensurance_all.txt", "result_ensurance_height.txt", "result_ensurance_rain.txt"]
