@@ -37,77 +37,77 @@ accuracyResult = []
 precisionResult = []
 recallResult = []
 totalConfusion = [[0, 0], [0, 0]]
-path = "ensurance_number0.pkl"
+paths = ["ensurance_number0.pkl", "ensurance_number1.pkl", "ensurance_number2.pkl", "ensurance_number3.pkl", "ensurance_number4.pkl"
+for path in paths:
+    df = pd.read_pickle(
+        f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
+    df = df.dropna()
+    df = df[["date", "target", "layers", "past3hours"]]
+    listofarr = []
+    column = "layers"
 
-df = pd.read_pickle(
-    f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
-df = df.dropna()
-df = df[["date", "target", "layers", "past3hours"]]
-listofarr = []
-column = "layers"
+    df[column] = df.apply(normalize, axis=1)
+    df[column] = df.apply(reshape, axis=1)
 
-df[column] = df.apply(normalize, axis=1)
-df[column] = df.apply(reshape, axis=1)
+    concat_df = pd.concat(listofarr)
 
-concat_df = pd.concat(listofarr)
+    df = concat_df.dropna(axis="columns", how="all")
+    df = df.reset_index(drop=True)
+    rain_p2000 = df.drop(columns=['indexl', 'index'])
 
-df = concat_df.dropna(axis="columns", how="all")
-df = df.reset_index(drop=True)
-rain_p2000 = df.drop(columns=['indexl', 'index'])
+    directory = os.fsencode("src/test_frames/")
+    all_files = []
+    files = os.listdir(directory)
+    for file in files:
+        all_files.append(os.fsdecode(file))
+    ten_random_files = random.sample(all_files, 10)
+    for filename in ten_random_files:
+        test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
+        # # test_frame = test_frame[["past3hours", "date", "target"]]
+        # list_399 = [str(x) for x in list(range(400))]
+        # test_frame = test_frame[list_399 + ['date', 'target']]
+        # # print(test_frame)
+        # # print(test_frame)
+        # dates_test_frame = test_frame["date"].tolist()
+        # print(len(rain_p2000.index))
+        training_frame = rain_p2000
+        # print(len(training_frame.index))
 
-directory = os.fsencode("src/test_frames/")
-all_files = []
-files = os.listdir(directory)
-for file in files:
-    all_files.append(os.fsdecode(file))
-ten_random_files = random.sample(all_files, 10)
-for filename in ten_random_files:
-    test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
-    # # test_frame = test_frame[["past3hours", "date", "target"]]
-    # list_399 = [str(x) for x in list(range(400))]
-    # test_frame = test_frame[list_399 + ['date', 'target']]
-    # # print(test_frame)
-    # # print(test_frame)
-    # dates_test_frame = test_frame["date"].tolist()
-    # print(len(rain_p2000.index))
-    training_frame = rain_p2000
-    # print(len(training_frame.index))
+        training_frame = training_frame.drop(columns=["date"])
+        test_frame = test_frame.drop(columns=["date"])
+        print(training_frame, test_frame)
+        training_labels = np.asarray(training_frame['target'])
+        training_labels = training_labels.astype('int')
+        training_features = np.asarray(training_frame.drop(columns=['target']))
+        training_features = training_features.astype('float')
+        test_labels = np.asarray(test_frame['target'])
+        test_labels = test_labels.astype('int')
+        test_features = np.asarray(test_frame.drop(columns=['target']))
+        test_features = test_features.astype('float')
 
-    training_frame = training_frame.drop(columns=["date"])
-    test_frame = test_frame.drop(columns=["date"])
-    print(training_frame, test_frame)
-    training_labels = np.asarray(training_frame['target'])
-    training_labels = training_labels.astype('int')
-    training_features = np.asarray(training_frame.drop(columns=['target']))
-    training_features = training_features.astype('float')
-    test_labels = np.asarray(test_frame['target'])
-    test_labels = test_labels.astype('int')
-    test_features = np.asarray(test_frame.drop(columns=['target']))
-    test_features = test_features.astype('float')
+        feature_list = list(training_frame.drop(columns=['target']).columns)
+        # print(feature_list)
 
-    feature_list = list(training_frame.drop(columns=['target']).columns)
-    # print(feature_list)
+        rf = RandomForestClassifier(n_estimators=1000, random_state=42)
+        # print(training_labels)
+        rf.fit(training_features, training_labels)
 
-    rf = RandomForestClassifier(n_estimators=1000, random_state=42)
-    # print(training_labels)
-    rf.fit(training_features, training_labels)
+        label_prediction = rf.predict(test_features)
+        confusion = confusion_matrix(test_labels, label_prediction)
+        totalConfusion[0][0] += confusion[0][0]
+        totalConfusion[0][1] += confusion[0][1]
+        totalConfusion[1][0] += confusion[1][0]
+        totalConfusion[1][1] += confusion[1][1]
 
-    label_prediction = rf.predict(test_features)
-    confusion = confusion_matrix(test_labels, label_prediction)
-    totalConfusion[0][0] += confusion[0][0]
-    totalConfusion[0][1] += confusion[0][1]
-    totalConfusion[1][0] += confusion[1][0]
-    totalConfusion[1][1] += confusion[1][1]
+        accuracyResult.append(metrics.accuracy_score(test_labels, label_prediction))
+        precisionResult.append(precision_score(test_labels, label_prediction))
+        recallResult.append(recall_score(test_labels, label_prediction))
 
-    accuracyResult.append(metrics.accuracy_score(test_labels, label_prediction))
-    precisionResult.append(precision_score(test_labels, label_prediction))
-    recallResult.append(recall_score(test_labels, label_prediction))
-
-    resultFile.write("Fold " + path + "\n")
-    resultFile.write(str(confusion) + '\n')
-    resultFile.write("Accuracy: " + str(metrics.accuracy_score(test_labels, label_prediction)) + "\n")
-    resultFile.write("Precision: " + str(precision_score(test_labels, label_prediction)) + "\n")
-    resultFile.write("Recall: " + str(recall_score(test_labels, label_prediction)) + "\n\n")
+        resultFile.write("Fold " + path + "\n")
+        resultFile.write(str(confusion) + '\n')
+        resultFile.write("Accuracy: " + str(metrics.accuracy_score(test_labels, label_prediction)) + "\n")
+        resultFile.write("Precision: " + str(precision_score(test_labels, label_prediction)) + "\n")
+        resultFile.write("Recall: " + str(recall_score(test_labels, label_prediction)) + "\n\n")
 resultFile.write("\nAverage accuracy: " + str(np.average(accuracyResult)) + "\n")
 resultFile.write("Average precision: " + str(np.average(precisionResult)) + "\n")
 resultFile.write("Average recall: " + str(np.average(recallResult)) + "\n")
