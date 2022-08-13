@@ -2,11 +2,9 @@ import pandas as pd
 import json
 import requests
 import random
-import os
 import time
-from maps_api import MapsApi
 from postcode_finder import find_all_postcode6, find_random_housenumber
-from helpers import rdconverter
+import rdconverter
 
 def get_lat_lng(houses_postcode, headers):
     try:

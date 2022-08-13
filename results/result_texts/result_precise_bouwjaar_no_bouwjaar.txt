@@ -69,9 +69,9 @@ Precision: 0.584070796460177
 Recall: 0.5945945945945946
 
 
-Average Accuracy: 0.6325384207737149
-Average Precision: 0.6451059914000069
-Average Recall: 0.613947583947584
+Average accuracy: 0.6325384207737149
+Average precision: 0.6451059914000069
+Average recall: 0.613947583947584
 Total Confusion matrix: 
 [722,387] 
 [428,681] 
