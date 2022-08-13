@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
 
 resultFolder = "/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open(resultFolder + "result_ensurance_height.txt", "w+")
+resultFile = open(resultFolder + "result_ensurance_rain.txt", "w+")
 
 
 def normalize(row):
@@ -42,18 +42,18 @@ for path in paths:
     df = pd.read_pickle(
         f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
     df = df.dropna()
-    df = df[["date", "target", "layers"]]
-    listofarr = []
-    column = "layers"
+    df = df[["date", "target", "past3hours"]]
+    # listofarr = []
+    # column = "layers"
 
-    df[column] = df.apply(normalize, axis=1)
-    df[column] = df.apply(reshape, axis=1)
-
-    concat_df = pd.concat(listofarr)
-
-    df = concat_df.dropna(axis="columns", how="all")
-    df = df.reset_index(drop=True)
-    rain_p2000 = df.drop(columns=['indexl', 'index'])
+    # df[column] = df.apply(normalize, axis=1)
+    # df[column] = df.apply(reshape, axis=1)
+    #
+    # concat_df = pd.concat(listofarr)
+    #
+    # df = concat_df.dropna(axis="columns", how="all")
+    # df = df.reset_index(drop=True)
+    # rain_p2000 = df.drop(columns=['indexl', 'index'])
 
     directory = os.fsencode("src/test_frames/")
     all_files = []
@@ -63,9 +63,9 @@ for path in paths:
     ten_random_files = random.sample(all_files, 10)
     for filename in ten_random_files:
         test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
-        # # test_frame = test_frame[["past3hours", "date", "target"]]
-        list_399 = [str(x) for x in list(range(400))]
-        test_frame = test_frame[list_399 + ['date', 'target']]
+        test_frame = test_frame[["past3hours", "date", "target"]]
+        # list_399 = [str(x) for x in list(range(400))]
+        # test_frame = test_frame[list_399 + ['date', 'target']]
         # # print(test_frame)
         # # print(test_frame)
         # dates_test_frame = test_frame["date"].tolist()
