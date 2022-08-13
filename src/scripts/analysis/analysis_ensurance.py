@@ -7,7 +7,7 @@ from sklearn.metrics import confusion_matrix, precision_score, recall_score
 from sklearn import metrics
 
 resultFolder = "/local/s2656566/wateroverlast/regenwater_overlast/results/result_texts/"
-resultFile = open(resultFolder + "result_ensurance_all.txt", "w+")
+resultFile = open(resultFolder + "result_ensurance_height.txt", "w+")
 
 
 def normalize(row):
@@ -42,7 +42,7 @@ for path in paths:
     df = pd.read_pickle(
         f"/local/s2656566/wateroverlast/regenwater_overlast/src/data/pkls/ensurance/{path}").reset_index()
     df = df.dropna()
-    df = df[["date", "target", "layers", "past3hours"]]
+    df = df[["date", "target", "layers"]]
     listofarr = []
     column = "layers"
 
@@ -64,8 +64,8 @@ for path in paths:
     for filename in ten_random_files:
         test_frame = pd.read_csv(f"src/test_frames/{filename}", index_col=0)
         # # test_frame = test_frame[["past3hours", "date", "target"]]
-        # list_399 = [str(x) for x in list(range(400))]
-        # test_frame = test_frame[list_399 + ['date', 'target']]
+        list_399 = [str(x) for x in list(range(400))]
+        test_frame = test_frame[list_399 + ['date', 'target']]
         # # print(test_frame)
         # # print(test_frame)
         # dates_test_frame = test_frame["date"].tolist()
