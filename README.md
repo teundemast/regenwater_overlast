@@ -28,7 +28,7 @@ We use the script 'scripts/generate_dataset.py' to generate the final dataset. T
 4. Add a height layer to these instances. 
 5. Sample a negative instance with the same height map but a somewhat random amount of rainfall. 
 
-## Changing resolution
+## Changing spatial resolution
 Changing the spatial resolution of the p2000 dataset can be done with the file 'scripts/changeresolution.py'. The BAG, a database with information on all residences in the Netherlands, was used in this process.  Make sure to fill in your own API key if you would like to do this. 
 
 An API key can be requested here: <https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen> 
