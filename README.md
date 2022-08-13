@@ -1,4 +1,4 @@
-# Predicting rain damage
+# Predicting Rain Damage
 Repository for the thesis of Teun de Mast
 
 The goal of this project is predict rain damage and compare models that use different data sources. Use has been made of 2 data sources that provide historical instances of raindamages. One is the P2000 network, which is a network that is used by emergency services in The Netherlands. The other one is a dataset from a private insurance company in which insurance claims per district per day can be found. 
@@ -37,5 +37,5 @@ An API key can be requested here: <https://www.kadaster.nl/zakelijk/producten/ad
 
 In my thesis we have also looked at the possibility to use the construction year of a house as a predictive feature. Unfortunately, the scripts to engineer this feature got lost due to a laptop that died. However, the BAG was also used for this. 
 
-
+Any questions can be send to: <teundemast@gmail.com>
 
