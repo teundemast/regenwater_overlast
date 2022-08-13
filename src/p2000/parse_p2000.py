@@ -1,3 +1,4 @@
+# Code from Thijs Simons is used: https://github.com/SimonsThijs/wateroverlast
 import pandas as pd
 import Levenshtein
 from unidecode import unidecode

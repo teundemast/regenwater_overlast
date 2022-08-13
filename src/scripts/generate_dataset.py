@@ -1,6 +1,7 @@
-from helpers import rdconverter
+# Code from Thijs Simons is used: https://github.com/SimonsThijs/wateroverlast
+import rdconverter
 from neerslag import precipitation_nl
-from slak import ahn_layer
+from layer import ahn_layer
 from datetime import datetime
 import pandas as pd
 import random

@@ -1,3 +1,4 @@
+# Code from Thijs Simons is used: https://github.com/SimonsThijs/wateroverlast
 from maps_api import MapsApi
 
 import os
