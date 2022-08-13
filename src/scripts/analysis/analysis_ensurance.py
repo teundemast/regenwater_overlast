@@ -70,7 +70,7 @@ for path in paths:
         # # print(test_frame)
         # dates_test_frame = test_frame["date"].tolist()
         # print(len(rain_p2000.index))
-        training_frame = rain_p2000
+        training_frame = df
         # print(len(training_frame.index))
 
         training_frame = training_frame.drop(columns=["date"])
