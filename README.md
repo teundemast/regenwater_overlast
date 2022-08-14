@@ -13,9 +13,9 @@ Some code is provided by Thijs Simons. His repository can be found here: <https:
 
 Since the insurance data is private data, it can not be found in this repository. 
 
-The process of scraping p2000 notifications can be found in the directory 'p2000'.
+The process of scraping p2000 notifications can be found in the directory 'src/p2000'.
 
-Scripts that are used to generate datasets and train and test models can be found in the directory 'scripts'.
+Scripts that are used to generate datasets and train and test models can be found in the directory 'src/scripts'.
 
 Results can be found in the directory 'results'. 
 
@@ -29,7 +29,7 @@ We use the script 'scripts/generate_dataset.py' to generate the final dataset. T
 5. Sample a negative instance with the same height map but a somewhat random amount of rainfall. 
 
 ## Changing spatial resolution
-Changing the spatial resolution of the p2000 dataset can be done with the file 'scripts/changeresolution.py'. The BAG, a database with information on all residences in the Netherlands, was used in this process.  Make sure to fill in your own API key if you would like to do this. 
+Changing the spatial resolution of the p2000 dataset can be done with the file 'src/scripts/changeresolution.py'. The BAG, a database with information on all residences in the Netherlands, was used in this process.  Make sure to fill in your own API key if you would like to do this. 
 
 An API key can be requested here: <https://www.kadaster.nl/zakelijk/producten/adressen-en-gebouwen/bag-api-individuele-bevragingen> 
 
